@@ -46,7 +46,6 @@ class UserTask: Mappable {
     var title: String?
     var limitDate: NSDate?
     var difficulty: Int?
-    var isMust: Bool?
     var steps: Int?
     var failureAt: NSDate?
     var userID: Int?
@@ -63,7 +62,6 @@ class UserTask: Mappable {
         limitDate <- map["limit_date"]
         difficulty <- map["difficulty"]
         steps <- map["steps"]
-        isMust <- map["is_must"]
         failureAt <- map["failure_at"]
         userID <- map["user_id"]
         doneAt <- map["done_at"]
