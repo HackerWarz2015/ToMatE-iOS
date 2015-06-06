@@ -8,6 +8,24 @@
 
 import ObjectMapper
 
+
+class GetUserTasksResponse: Mappable {
+
+    var userTasks: [UserTask]?
+
+    init() {}
+
+    required init?(_ map: Map) {
+        mapping(map)
+    }
+
+    func mapping(map: Map) {
+        userTasks <- map["user_tasks"]
+    }
+
+}
+
+
 class UserTask: Mappable {
 
     var title: String?

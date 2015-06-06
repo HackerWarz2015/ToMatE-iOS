@@ -9,7 +9,7 @@
 import ObjectMapper
 
 
-class UserResponse: Mappable {
+class GetUsersResponse: Mappable {
     var users: [User]?
 
     init() {}
@@ -22,6 +22,22 @@ class UserResponse: Mappable {
         users <- map["users"]
     }
 }
+
+class ShowUserResponse: Mappable {
+    var user: User?
+
+    init() {}
+    required init?(_ map: Map) {
+        mapping(map)
+    }
+
+    func mapping(map: Map) {
+        user <- map["user"]
+    }
+}
+
+
+
 
 class User: Mappable {
     var name: String?
@@ -36,7 +52,6 @@ class User: Mappable {
     }
 
     func mapping(map: Map) {
-        
         name <- map["name"]
         steps <- map["steps"]
         id <- map["id"]
