@@ -23,6 +23,13 @@
 		E95459101B2301C100622560 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954590F1B2301C100622560 /* UIColorExtension.swift */; };
 		E95459191B2302E800622560 /* PaddingUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95459181B2302E800622560 /* PaddingUILabel.swift */; };
 		E95459221B23156B00622560 /* OutlineUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95459211B23156B00622560 /* OutlineUILabel.swift */; };
+		E95459261B234EB400622560 /* WelcomeTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95459251B234EB400622560 /* WelcomeTopViewController.swift */; };
+		E954592C1B23543C00622560 /* WelcomeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954592B1B23543C00622560 /* WelcomeLoginViewController.swift */; };
+		E954592E1B23544900622560 /* WelcomeSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954592D1B23544900622560 /* WelcomeSignUpViewController.swift */; };
+		E95459301B23567800622560 /* WelcomeLoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954592F1B23567800622560 /* WelcomeLoginTableViewCell.swift */; };
+		E95459321B23568A00622560 /* WelcomeSignUpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95459311B23568A00622560 /* WelcomeSignUpTableViewCell.swift */; };
+		E95459361B23593300622560 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E95459351B23593300622560 /* logo.png */; };
+		E954593A1B2361C200622560 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E95459391B2361C200622560 /* icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +65,13 @@
 		E954590F1B2301C100622560 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		E95459181B2302E800622560 /* PaddingUILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingUILabel.swift; sourceTree = "<group>"; };
 		E95459211B23156B00622560 /* OutlineUILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlineUILabel.swift; sourceTree = "<group>"; };
+		E95459251B234EB400622560 /* WelcomeTopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeTopViewController.swift; sourceTree = "<group>"; };
+		E954592B1B23543C00622560 /* WelcomeLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeLoginViewController.swift; sourceTree = "<group>"; };
+		E954592D1B23544900622560 /* WelcomeSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeSignUpViewController.swift; sourceTree = "<group>"; };
+		E954592F1B23567800622560 /* WelcomeLoginTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeLoginTableViewCell.swift; sourceTree = "<group>"; };
+		E95459311B23568A00622560 /* WelcomeSignUpTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeSignUpTableViewCell.swift; sourceTree = "<group>"; };
+		E95459351B23593300622560 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = Image/logo.png; sourceTree = SOURCE_ROOT; };
+		E95459391B2361C200622560 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Image/icon.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +127,7 @@
 			children = (
 				E954591A1B23051A00622560 /* Image */,
 				4905727D1B22CC040010B76A /* AppDelegate.swift */,
+				E95459241B234E9E00622560 /* Welcome */,
 				E95458FE1B22E2E300622560 /* UserTask */,
 				4905729D1B22DA850010B76A /* Models */,
 				490572811B22CC040010B76A /* Main.storyboard */,
@@ -207,8 +222,38 @@
 		E954591A1B23051A00622560 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				E95459351B23593300622560 /* logo.png */,
+				E95459391B2361C200622560 /* icon.png */,
 			);
 			name = Image;
+			sourceTree = "<group>";
+		};
+		E95459241B234E9E00622560 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				E95459251B234EB400622560 /* WelcomeTopViewController.swift */,
+				E95459331B23568F00622560 /* WelcomeLogin */,
+				E95459341B23569700622560 /* WelcomeSignUp */,
+			);
+			name = Welcome;
+			sourceTree = "<group>";
+		};
+		E95459331B23568F00622560 /* WelcomeLogin */ = {
+			isa = PBXGroup;
+			children = (
+				E954592B1B23543C00622560 /* WelcomeLoginViewController.swift */,
+				E954592F1B23567800622560 /* WelcomeLoginTableViewCell.swift */,
+			);
+			name = WelcomeLogin;
+			sourceTree = "<group>";
+		};
+		E95459341B23569700622560 /* WelcomeSignUp */ = {
+			isa = PBXGroup;
+			children = (
+				E954592D1B23544900622560 /* WelcomeSignUpViewController.swift */,
+				E95459311B23568A00622560 /* WelcomeSignUpTableViewCell.swift */,
+			);
+			name = WelcomeSignUp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +339,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E95459361B23593300622560 /* logo.png in Resources */,
+				E954593A1B2361C200622560 /* icon.png in Resources */,
 				490572831B22CC040010B76A /* Main.storyboard in Resources */,
 				490572881B22CC040010B76A /* LaunchScreen.xib in Resources */,
 				490572851B22CC040010B76A /* Images.xcassets in Resources */,
@@ -362,17 +409,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E95459321B23568A00622560 /* WelcomeSignUpTableViewCell.swift in Sources */,
 				4981F2161B22EA0C00C574D7 /* UserTaskModel.swift in Sources */,
+				E954592C1B23543C00622560 /* WelcomeLoginViewController.swift in Sources */,
+				E95459301B23567800622560 /* WelcomeLoginTableViewCell.swift in Sources */,
 				4905729F1B22DBDF0010B76A /* UserModel.swift in Sources */,
 				E95459001B22E36E00622560 /* UserTaskListViewController.swift in Sources */,
 				E95459041B22F8B600622560 /* UserTaskNewViewController.swift in Sources */,
 				E95459221B23156B00622560 /* OutlineUILabel.swift in Sources */,
 				E95459191B2302E800622560 /* PaddingUILabel.swift in Sources */,
+				E954592E1B23544900622560 /* WelcomeSignUpViewController.swift in Sources */,
 				E95459061B22FC6A00622560 /* UserTaskListCustomTableViewCell.swift in Sources */,
 				4905727E1B22CC040010B76A /* AppDelegate.swift in Sources */,
 				4981F2181B22F0B400C574D7 /* RewardModel.swift in Sources */,
 				499E58E31B2316AF00EEBD45 /* Constant.swift in Sources */,
 				E95459101B2301C100622560 /* UIColorExtension.swift in Sources */,
+				E95459261B234EB400622560 /* WelcomeTopViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

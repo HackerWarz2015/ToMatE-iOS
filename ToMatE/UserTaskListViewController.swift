@@ -39,14 +39,14 @@ class UserTaskListViewController: UITableViewController,UITableViewDelegate,UITa
     
         switch indexPath.row%3 {
         case 0:
-            cell.iconViewBackGroundColor(UIColor.TMEBlueColor())
+            cell.iconView.backgroundColor = UIColor.TMEBlueColor()
             cell.stepLabel.text = "1"
             cell.titleLabel.text = "機械学習レポート"
             cell.limitCountLabel.text = "あと123日"
             cell.limitDayLabel.text = "2015.1.5"
             
         case 1:
-            cell.iconViewBackGroundColor(UIColor.TMEGreenColor())
+            cell.iconView.backgroundColor = UIColor.TMEGreenColor()
             cell.stepLabel.text = "3"
             cell.titleLabel.text = "アプリ開発"
             cell.limitCountLabel.text = "あと10日"
@@ -54,7 +54,7 @@ class UserTaskListViewController: UITableViewController,UITableViewDelegate,UITa
             
             
         case 2:
-            cell.iconViewBackGroundColor(UIColor.TMERedColor())
+            cell.iconView.backgroundColor = UIColor.TMERedColor()
             cell.stepLabel.text = "5"
             cell.titleLabel.text = "お買い物"
             cell.limitCountLabel.text = "あと1234日"

@@ -13,10 +13,6 @@ class UserTaskListCustomTableViewCell: UITableViewCell {
     @IBOutlet weak var iconView: UIView!
     @IBOutlet weak var stepLabel: UILabel!
     
-    @IBOutlet weak var iconLeftView: UIView!
-    @IBOutlet weak var iconCenterView: UIView!
-    @IBOutlet weak var iconRightView: UIView!
-    
     @IBOutlet weak var titleLabel: OutlineUILabel!
     
     @IBOutlet weak var limitDayLabel: PaddingUILabel!
@@ -26,20 +22,14 @@ class UserTaskListCustomTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         iconView.layer.cornerRadius = iconView.frame.size.height/2
-        iconLeftView.layer.cornerRadius = iconLeftView.frame.size.height/2
-        iconCenterView.layer.cornerRadius = iconCenterView.frame.size.height/2
-        iconRightView.layer.cornerRadius = iconRightView.frame.size.height/2
-        
-        
+    
         titleLabel.outlineColor = UIColor.darkGrayColor()
         titleLabel.outlineSize = 0.05
+        
+        let selectedBackground = UIView()
+        selectedBackground.backgroundColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1.0)
+        self.selectedBackgroundView = selectedBackground
     }
     
-    func iconViewBackGroundColor(color:UIColor) {
-        iconView.backgroundColor = color
-        iconLeftView.backgroundColor = color
-        iconCenterView.backgroundColor = color
-        iconRightView.backgroundColor = color
-    }
-
+    
 }
