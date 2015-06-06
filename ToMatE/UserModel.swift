@@ -11,6 +11,8 @@ import ObjectMapper
 class UserModel: Mappable {
     var name: String?
     var steps: Int?
+    var id: Int?
+    var email: String?
 
     init() {}
 
@@ -21,6 +23,7 @@ class UserModel: Mappable {
     func mapping(map: Map) {
         name <- map["name"]
         steps <- map["steps"]
-
+        id <- map["id"]
+        email <- map["email"]
     }
 }
