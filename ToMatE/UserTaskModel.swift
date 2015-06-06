@@ -43,13 +43,14 @@ class PUTUserTasksResponse: Mappable {
 
 class UserTask: Mappable {
 
+    var id: Int?
+    var userID: Int?
     var title: String?
-    var limitDate: NSDate?
     var difficulty: Int?
     var steps: Int?
     var failureAt: NSDate?
-    var userID: Int?
     var doneAt: NSDate?
+    var limitDate: NSDate?
 
     init() {}
 
@@ -58,6 +59,7 @@ class UserTask: Mappable {
     }
 
     func mapping(map: Map) {
+        id <- map["id"]
         title <- map["title"]
         limitDate <- map["limit_date"]
         difficulty <- map["difficulty"]
@@ -65,6 +67,14 @@ class UserTask: Mappable {
         failureAt <- map["failure_at"]
         userID <- map["user_id"]
         doneAt <- map["done_at"]
+    }
+
+    class func getCreateUserTaskParams(title: String, difficulty: Int, steps: Int) -> [String: AnyObject] {
+        return ["title": title, "difficulty": difficulty, "steps": steps]
+    }
+
+    class func getUpdateUserTaskParams(status: String, title: String, difficulty: Int, steps: Int) -> [String: AnyObject] {
+        return ["status": status, "title": title, "difficulty": difficulty, "steps": steps]
     }
 
 }

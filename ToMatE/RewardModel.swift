@@ -59,4 +59,12 @@ class Reward: Mappable {
         isPublic <- map["is_public"]
     }
 
+    class func getCreateRewardParams(title: String, isPublic: Bool) -> [String: AnyObject] {
+        return ["title": title, "is_public": isPublic]
+    }
+
+    class func getUpdateRewardParams(status: String, title: String, isPublic: Bool) -> [String: AnyObject] {
+        return ["status": status, "title": title, "is_public": isPublic]
+    }
+
 }
