@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4905727E1B22CC040010B76A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905727D1B22CC040010B76A /* AppDelegate.swift */; };
-		490572801B22CC040010B76A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905727F1B22CC040010B76A /* ViewController.swift */; };
 		490572831B22CC040010B76A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 490572811B22CC040010B76A /* Main.storyboard */; };
 		490572851B22CC040010B76A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 490572841B22CC040010B76A /* Images.xcassets */; };
 		490572881B22CC040010B76A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490572861B22CC040010B76A /* LaunchScreen.xib */; };
@@ -18,6 +17,12 @@
 		4981F2181B22F0B400C574D7 /* RewardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981F2171B22F0B400C574D7 /* RewardModel.swift */; };
 		499E58E31B2316AF00EEBD45 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499E58E21B2316AF00EEBD45 /* Constant.swift */; };
 		6239CAA56D4899EAE3278087 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2F381799283B328CE08564 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		E95459001B22E36E00622560 /* UserTaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95458FF1B22E36E00622560 /* UserTaskListViewController.swift */; };
+		E95459041B22F8B600622560 /* UserTaskNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95459031B22F8B600622560 /* UserTaskNewViewController.swift */; };
+		E95459061B22FC6A00622560 /* UserTaskListCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95459051B22FC6A00622560 /* UserTaskListCustomTableViewCell.swift */; };
+		E95459101B2301C100622560 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954590F1B2301C100622560 /* UIColorExtension.swift */; };
+		E95459191B2302E800622560 /* PaddingUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95459181B2302E800622560 /* PaddingUILabel.swift */; };
+		E95459221B23156B00622560 /* OutlineUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95459211B23156B00622560 /* OutlineUILabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +39,6 @@
 		490572781B22CC040010B76A /* ToMatE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToMatE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4905727C1B22CC040010B76A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4905727D1B22CC040010B76A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4905727F1B22CC040010B76A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		490572821B22CC040010B76A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		490572841B22CC040010B76A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		490572871B22CC040010B76A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -48,6 +52,12 @@
 		4F2F381799283B328CE08564 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69CE69B5AB0D7FC34B95FFE2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D4802D89038C17C42406F056 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		E95458FF1B22E36E00622560 /* UserTaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTaskListViewController.swift; sourceTree = "<group>"; };
+		E95459031B22F8B600622560 /* UserTaskNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTaskNewViewController.swift; sourceTree = "<group>"; };
+		E95459051B22FC6A00622560 /* UserTaskListCustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTaskListCustomTableViewCell.swift; sourceTree = "<group>"; };
+		E954590F1B2301C100622560 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		E95459181B2302E800622560 /* PaddingUILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingUILabel.swift; sourceTree = "<group>"; };
+		E95459211B23156B00622560 /* OutlineUILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlineUILabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +111,10 @@
 		4905727A1B22CC040010B76A /* ToMatE */ = {
 			isa = PBXGroup;
 			children = (
-				4905729D1B22DA850010B76A /* Models */,
+				E954591A1B23051A00622560 /* Image */,
 				4905727D1B22CC040010B76A /* AppDelegate.swift */,
-				4905727F1B22CC040010B76A /* ViewController.swift */,
+				E95458FE1B22E2E300622560 /* UserTask */,
+				4905729D1B22DA850010B76A /* Models */,
 				490572811B22CC040010B76A /* Main.storyboard */,
 				490572841B22CC040010B76A /* Images.xcassets */,
 				490572861B22CC040010B76A /* LaunchScreen.xib */,
@@ -115,6 +126,7 @@
 		4905727B1B22CC040010B76A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E954590C1B2300CF00622560 /* Extension */,
 				4905727C1B22CC040010B76A /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -154,6 +166,49 @@
 				4F2F381799283B328CE08564 /* Pods.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E95458FE1B22E2E300622560 /* UserTask */ = {
+			isa = PBXGroup;
+			children = (
+				E95459071B22FC7000622560 /* UserTaskList */,
+				E95459031B22F8B600622560 /* UserTaskNewViewController.swift */,
+			);
+			name = UserTask;
+			sourceTree = "<group>";
+		};
+		E95459071B22FC7000622560 /* UserTaskList */ = {
+			isa = PBXGroup;
+			children = (
+				E95458FF1B22E36E00622560 /* UserTaskListViewController.swift */,
+				E95459051B22FC6A00622560 /* UserTaskListCustomTableViewCell.swift */,
+			);
+			name = UserTaskList;
+			sourceTree = "<group>";
+		};
+		E954590C1B2300CF00622560 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E95459151B23029100622560 /* Parts */,
+				E954590F1B2301C100622560 /* UIColorExtension.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		E95459151B23029100622560 /* Parts */ = {
+			isa = PBXGroup;
+			children = (
+				E95459181B2302E800622560 /* PaddingUILabel.swift */,
+				E95459211B23156B00622560 /* OutlineUILabel.swift */,
+			);
+			name = Parts;
+			sourceTree = "<group>";
+		};
+		E954591A1B23051A00622560 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
