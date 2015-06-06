@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4905727E1B22CC040010B76A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905727D1B22CC040010B76A /* AppDelegate.swift */; };
+		490572801B22CC040010B76A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905727F1B22CC040010B76A /* ViewController.swift */; };
+		490572831B22CC040010B76A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 490572811B22CC040010B76A /* Main.storyboard */; };
+		490572851B22CC040010B76A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 490572841B22CC040010B76A /* Images.xcassets */; };
+		490572881B22CC040010B76A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490572861B22CC040010B76A /* LaunchScreen.xib */; };
+		490572941B22CC040010B76A /* ToMatETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490572931B22CC040010B76A /* ToMatETests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4905728E1B22CC040010B76A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 490572701B22CC040010B76A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 490572771B22CC040010B76A;
+			remoteInfo = ToMatE;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		490572781B22CC040010B76A /* ToMatE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToMatE.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4905727C1B22CC040010B76A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4905727D1B22CC040010B76A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4905727F1B22CC040010B76A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		490572821B22CC040010B76A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		490572841B22CC040010B76A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		490572871B22CC040010B76A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		4905728D1B22CC040010B76A /* ToMatETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToMatETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		490572921B22CC040010B76A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		490572931B22CC040010B76A /* ToMatETests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToMatETests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		490572751B22CC040010B76A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4905728A1B22CC040010B76A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4905726F1B22CC040010B76A = {
+			isa = PBXGroup;
+			children = (
+				4905727A1B22CC040010B76A /* ToMatE */,
+				490572901B22CC040010B76A /* ToMatETests */,
+				490572791B22CC040010B76A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		490572791B22CC040010B76A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				490572781B22CC040010B76A /* ToMatE.app */,
+				4905728D1B22CC040010B76A /* ToMatETests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4905727A1B22CC040010B76A /* ToMatE */ = {
+			isa = PBXGroup;
+			children = (
+				4905727D1B22CC040010B76A /* AppDelegate.swift */,
+				4905727F1B22CC040010B76A /* ViewController.swift */,
+				490572811B22CC040010B76A /* Main.storyboard */,
+				490572841B22CC040010B76A /* Images.xcassets */,
+				490572861B22CC040010B76A /* LaunchScreen.xib */,
+				4905727B1B22CC040010B76A /* Supporting Files */,
+			);
+			path = ToMatE;
+			sourceTree = "<group>";
+		};
+		4905727B1B22CC040010B76A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4905727C1B22CC040010B76A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		490572901B22CC040010B76A /* ToMatETests */ = {
+			isa = PBXGroup;
+			children = (
+				490572931B22CC040010B76A /* ToMatETests.swift */,
+				490572911B22CC040010B76A /* Supporting Files */,
+			);
+			path = ToMatETests;
+			sourceTree = "<group>";
+		};
+		490572911B22CC040010B76A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				490572921B22CC040010B76A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		490572771B22CC040010B76A /* ToMatE */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 490572971B22CC040010B76A /* Build configuration list for PBXNativeTarget "ToMatE" */;
+			buildPhases = (
+				490572741B22CC040010B76A /* Sources */,
+				490572751B22CC040010B76A /* Frameworks */,
+				490572761B22CC040010B76A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ToMatE;
+			productName = ToMatE;
+			productReference = 490572781B22CC040010B76A /* ToMatE.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4905728C1B22CC040010B76A /* ToMatETests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4905729A1B22CC040010B76A /* Build configuration list for PBXNativeTarget "ToMatETests" */;
+			buildPhases = (
+				490572891B22CC040010B76A /* Sources */,
+				4905728A1B22CC040010B76A /* Frameworks */,
+				4905728B1B22CC040010B76A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4905728F1B22CC040010B76A /* PBXTargetDependency */,
+			);
+			name = ToMatETests;
+			productName = ToMatETests;
+			productReference = 4905728D1B22CC040010B76A /* ToMatETests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		490572701B22CC040010B76A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = KazuyaMIURA;
+				TargetAttributes = {
+					490572771B22CC040010B76A = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					4905728C1B22CC040010B76A = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 490572771B22CC040010B76A;
+					};
+				};
+			};
+			buildConfigurationList = 490572731B22CC040010B76A /* Build configuration list for PBXProject "ToMatE" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4905726F1B22CC040010B76A;
+			productRefGroup = 490572791B22CC040010B76A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				490572771B22CC040010B76A /* ToMatE */,
+				4905728C1B22CC040010B76A /* ToMatETests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		490572761B22CC040010B76A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				490572831B22CC040010B76A /* Main.storyboard in Resources */,
+				490572881B22CC040010B76A /* LaunchScreen.xib in Resources */,
+				490572851B22CC040010B76A /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4905728B1B22CC040010B76A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		490572741B22CC040010B76A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				490572801B22CC040010B76A /* ViewController.swift in Sources */,
+				4905727E1B22CC040010B76A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		490572891B22CC040010B76A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				490572941B22CC040010B76A /* ToMatETests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4905728F1B22CC040010B76A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 490572771B22CC040010B76A /* ToMatE */;
+			targetProxy = 4905728E1B22CC040010B76A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		490572811B22CC040010B76A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				490572821B22CC040010B76A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		490572861B22CC040010B76A /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				490572871B22CC040010B76A /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		490572951B22CC040010B76A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		490572961B22CC040010B76A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		490572981B22CC040010B76A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ToMatE/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		490572991B22CC040010B76A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ToMatE/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4905729B1B22CC040010B76A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ToMatETests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ToMatE.app/ToMatE";
+			};
+			name = Debug;
+		};
+		4905729C1B22CC040010B76A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ToMatETests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ToMatE.app/ToMatE";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		490572731B22CC040010B76A /* Build configuration list for PBXProject "ToMatE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				490572951B22CC040010B76A /* Debug */,
+				490572961B22CC040010B76A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		490572971B22CC040010B76A /* Build configuration list for PBXNativeTarget "ToMatE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				490572981B22CC040010B76A /* Debug */,
+				490572991B22CC040010B76A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4905729A1B22CC040010B76A /* Build configuration list for PBXNativeTarget "ToMatETests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4905729B1B22CC040010B76A /* Debug */,
+				4905729C1B22CC040010B76A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 490572701B22CC040010B76A /* Project object */;
+}
