@@ -16,6 +16,7 @@
 		4981F2161B22EA0C00C574D7 /* UserTaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981F2151B22EA0C00C574D7 /* UserTaskModel.swift */; };
 		4981F2181B22F0B400C574D7 /* RewardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981F2171B22F0B400C574D7 /* RewardModel.swift */; };
 		499E58E31B2316AF00EEBD45 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499E58E21B2316AF00EEBD45 /* Constant.swift */; };
+		499E58E51B2343FC00EEBD45 /* LoggedInUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499E58E41B2343FC00EEBD45 /* LoggedInUser.swift */; };
 		6239CAA56D4899EAE3278087 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2F381799283B328CE08564 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E95459001B22E36E00622560 /* UserTaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95458FF1B22E36E00622560 /* UserTaskListViewController.swift */; };
 		E95459041B22F8B600622560 /* UserTaskNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95459031B22F8B600622560 /* UserTaskNewViewController.swift */; };
@@ -49,6 +50,7 @@
 		4981F2151B22EA0C00C574D7 /* UserTaskModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTaskModel.swift; sourceTree = "<group>"; };
 		4981F2171B22F0B400C574D7 /* RewardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardModel.swift; sourceTree = "<group>"; };
 		499E58E21B2316AF00EEBD45 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		499E58E41B2343FC00EEBD45 /* LoggedInUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedInUser.swift; sourceTree = "<group>"; };
 		4F2F381799283B328CE08564 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69CE69B5AB0D7FC34B95FFE2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D4802D89038C17C42406F056 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				4981F2171B22F0B400C574D7 /* RewardModel.swift */,
 				4981F2151B22EA0C00C574D7 /* UserTaskModel.swift */,
 				499E58E21B2316AF00EEBD45 /* Constant.swift */,
+				499E58E41B2343FC00EEBD45 /* LoggedInUser.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				E95459001B22E36E00622560 /* UserTaskListViewController.swift in Sources */,
 				E95459041B22F8B600622560 /* UserTaskNewViewController.swift in Sources */,
 				E95459221B23156B00622560 /* OutlineUILabel.swift in Sources */,
+				499E58E51B2343FC00EEBD45 /* LoggedInUser.swift in Sources */,
 				E95459191B2302E800622560 /* PaddingUILabel.swift in Sources */,
 				E95459061B22FC6A00622560 /* UserTaskListCustomTableViewCell.swift in Sources */,
 				4905727E1B22CC040010B76A /* AppDelegate.swift in Sources */,
