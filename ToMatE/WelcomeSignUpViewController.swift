@@ -106,8 +106,6 @@ class WelcomeSignUpViewController: UIViewController,UITableViewDataSource,UITabl
             return
         }
 
-        
-
         Alamofire.request(.GET, Constant.API_ROOT + "users/", parameters: User.getCreateUserParams(name!, email: address!, password: pass0!, passwordConf: pass1!), encoding: .JSON)
             .responseObject { (response: SHOWUserResponse?, error: NSError?) in
                 if let userResponse = response {
@@ -119,9 +117,6 @@ class WelcomeSignUpViewController: UIViewController,UITableViewDataSource,UITabl
                     }
                 }
         }
-
-
-        
     }
 
     @IBAction func didTapScreen(sender: AnyObject) {

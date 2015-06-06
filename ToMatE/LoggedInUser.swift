@@ -18,6 +18,7 @@ class LoggedInUser {
     private var image: UIImage?
     private var imageURL: String?
     private var email: String?
+    private var id: Int?
 
     private init() {}
 
@@ -52,6 +53,14 @@ class LoggedInUser {
 
     func getEmail() -> String? {
         return self.email
+    }
+
+    func getId() -> Int? {
+        return self.id
+    }
+
+    func setId(id: Int) {
+        self.id = id
     }
 
     func getImage() -> UIImage? {
