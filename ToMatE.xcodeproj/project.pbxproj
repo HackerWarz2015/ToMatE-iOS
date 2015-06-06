@@ -362,12 +362,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				490572801B22CC040010B76A /* ViewController.swift in Sources */,
 				4981F2161B22EA0C00C574D7 /* UserTaskModel.swift in Sources */,
 				4905729F1B22DBDF0010B76A /* UserModel.swift in Sources */,
+				E95459001B22E36E00622560 /* UserTaskListViewController.swift in Sources */,
+				E95459041B22F8B600622560 /* UserTaskNewViewController.swift in Sources */,
+				E95459221B23156B00622560 /* OutlineUILabel.swift in Sources */,
+				E95459191B2302E800622560 /* PaddingUILabel.swift in Sources */,
+				E95459061B22FC6A00622560 /* UserTaskListCustomTableViewCell.swift in Sources */,
 				4905727E1B22CC040010B76A /* AppDelegate.swift in Sources */,
 				4981F2181B22F0B400C574D7 /* RewardModel.swift in Sources */,
 				499E58E31B2316AF00EEBD45 /* Constant.swift in Sources */,
+				E95459101B2301C100622560 /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
