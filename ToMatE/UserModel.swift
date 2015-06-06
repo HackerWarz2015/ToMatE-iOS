@@ -47,6 +47,7 @@ class User: Mappable {
     var steps: Int?
     var id: Int?
     var email: String?
+    var friendIDs: [Int]?
 
     init() {}
 
@@ -59,6 +60,7 @@ class User: Mappable {
         steps <- map["steps"]
         id <- map["id"]
         email <- map["email"]
+        friendIDs <- map["friend_ids"]
     }
 
 }
