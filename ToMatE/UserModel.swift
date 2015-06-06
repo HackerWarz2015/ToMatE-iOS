@@ -71,7 +71,7 @@ class User: Mappable {
         password <- map["password"]
     }
 
-    class func AuthenticationParamss(email: String, password: String) -> [String: AnyObject] {
+    class func getAuthenticationParams(email: String, password: String) -> [String: AnyObject] {
         return ["user": ["email": email, "password": password]]
     }
 

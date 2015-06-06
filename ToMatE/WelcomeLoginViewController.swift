@@ -61,11 +61,14 @@ class WelcomeLoginViewController: UIViewController,UITableViewDelegate,UITableVi
     
     @IBAction func didTapLoginButton(sender: AnyObject) {
         let viewController:UITabBarController = self.storyboard?.instantiateViewControllerWithIdentifier("tabBarController") as! UITabBarController
-        self.presentViewController(viewController, animated: true, completion: nil)
+
         let address = (self.view.viewWithTag(1) as? UITextField)?.text
         let pass = (self.view.viewWithTag(2) as? UITextField)?.text
-        NSLog("address:%@,pass:%@", address!,pass!)
+
+        self.presentViewController(viewController, animated: true, completion: nil)
+
         
+
         
     }
     
