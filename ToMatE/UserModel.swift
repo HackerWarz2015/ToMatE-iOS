@@ -53,6 +53,7 @@ class User: Mappable {
     var email: String?
     var friendIDs: [Int]?
     var token: String?
+    var password: String?
 
     init() {}
 
@@ -67,6 +68,7 @@ class User: Mappable {
         email <- map["email"]
         friendIDs <- map["friend_ids"]
         token <- map["authentication_token"]
+        password <- map["password"]
     }
 
     class func AuthenticationParamss(email: String, password: String) -> [String: AnyObject] {
