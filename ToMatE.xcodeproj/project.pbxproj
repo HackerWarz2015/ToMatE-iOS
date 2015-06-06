@@ -14,6 +14,7 @@
 		490572881B22CC040010B76A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 490572861B22CC040010B76A /* LaunchScreen.xib */; };
 		490572941B22CC040010B76A /* ToMatETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490572931B22CC040010B76A /* ToMatETests.swift */; };
 		4905729F1B22DBDF0010B76A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4905729E1B22DBDF0010B76A /* UserModel.swift */; };
+		4981F2161B22EA0C00C574D7 /* UserTaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981F2151B22EA0C00C574D7 /* UserTaskModel.swift */; };
 		6239CAA56D4899EAE3278087 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2F381799283B328CE08564 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		490572921B22CC040010B76A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		490572931B22CC040010B76A /* ToMatETests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToMatETests.swift; sourceTree = "<group>"; };
 		4905729E1B22DBDF0010B76A /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		4981F2151B22EA0C00C574D7 /* UserTaskModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTaskModel.swift; sourceTree = "<group>"; };
 		4F2F381799283B328CE08564 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69CE69B5AB0D7FC34B95FFE2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D4802D89038C17C42406F056 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				4905729E1B22DBDF0010B76A /* UserModel.swift */,
+				4981F2151B22EA0C00C574D7 /* UserTaskModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				490572801B22CC040010B76A /* ViewController.swift in Sources */,
+				4981F2161B22EA0C00C574D7 /* UserTaskModel.swift in Sources */,
 				4905729F1B22DBDF0010B76A /* UserModel.swift in Sources */,
 				4905727E1B22CC040010B76A /* AppDelegate.swift in Sources */,
 			);
