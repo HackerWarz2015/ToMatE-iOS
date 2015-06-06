@@ -8,8 +8,8 @@
 
 import ObjectMapper
 
+class GETUsersResponse: Mappable {
 
-class GetUsersResponse: Mappable {
     var users: [User]?
 
     init() {}
@@ -24,7 +24,8 @@ class GetUsersResponse: Mappable {
     
 }
 
-class ShowUserResponse: Mappable {
+class SHOWUserResponse: Mappable {
+    
     var user: User?
 
     init() {}
@@ -38,8 +39,6 @@ class ShowUserResponse: Mappable {
     }
 
 }
-
-
 
 
 class User: Mappable {

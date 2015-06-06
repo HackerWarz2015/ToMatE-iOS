@@ -8,8 +8,7 @@
 
 import ObjectMapper
 
-
-class GetUserTasksResponse: Mappable {
+class GETUserTasksResponse: Mappable {
 
     var userTasks: [UserTask]?
 
@@ -21,6 +20,22 @@ class GetUserTasksResponse: Mappable {
 
     func mapping(map: Map) {
         userTasks <- map["user_tasks"]
+    }
+
+}
+
+class PUTUserTasksResponse: Mappable {
+
+    var userTask: UserTask?
+
+    init() {}
+
+    required init?(_ map: Map) {
+        mapping(map)
+    }
+
+    func mapping(map: Map) {
+        userTask <- map["user_task"]
     }
 
 }
@@ -53,5 +68,5 @@ class UserTask: Mappable {
         userID <- map["user_id"]
         doneAt <- map["done_at"]
     }
-    
+
 }

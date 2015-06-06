@@ -8,7 +8,7 @@
 
 import ObjectMapper
 
-class GetRewardsResponse: Mappable {
+class GETRewardsResponse: Mappable {
 
     var rewards: [Reward]?
 
@@ -20,6 +20,22 @@ class GetRewardsResponse: Mappable {
 
     func mapping(map: Map) {
         rewards <- map["rewards"]
+    }
+
+}
+
+class PUTRewardResponse: Mappable {
+
+    var reward: Reward?
+
+    init() {}
+
+    required init?(_ map: Map) {
+        mapping(map)
+    }
+
+    func mapping(map: Map) {
+        reward <- map["rewards"]
     }
 
 }
