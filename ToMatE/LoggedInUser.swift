@@ -76,7 +76,10 @@ class LoggedInUser {
                 self.email = userResponse.user?.email
                 self.password = userResponse.user?.password
                 self.token = userResponse.user?.token
-                //TODO: save userdefaults and auto login
+
+                NSUserDefaults.standardUserDefaults().setObject(self.email, forKey: "email")
+                NSUserDefaults.standardUserDefaults().setObject(self.password, forKey: "pass")
+                NSUserDefaults.standardUserDefaults().setObject(self.token, forKey: "token")
 
                 dispatch_semaphore_signal(semaphore)
             }
