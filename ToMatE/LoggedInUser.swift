@@ -17,9 +17,7 @@ class LoggedInUser {
     private var image: UIImage?
     private var imageURL: String?
 
-    private init() {
-
-    }
+    private init() {}
 
     func getName() -> String? {
         return LoggedInUser.currentUser.name
