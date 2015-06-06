@@ -65,10 +65,11 @@ class WelcomeLoginViewController: UIViewController,UITableViewDelegate,UITableVi
         let address = (self.view.viewWithTag(1) as? UITextField)?.text
         let pass = (self.view.viewWithTag(2) as? UITextField)?.text
 
-        self.presentViewController(viewController, animated: true, completion: nil)
-
-        
-
+        LoggedInUser.currentUser.setEmail(address ?? "")
+        LoggedInUser.currentUser.setPassword(pass ?? "")
+        if LoggedInUser.currentUser.repossessionAuthenticationToken() {
+            self.presentViewController(viewController, animated: true, completion: nil)
+        }
         
     }
     

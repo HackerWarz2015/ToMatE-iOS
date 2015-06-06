@@ -72,7 +72,12 @@ class LoggedInUser {
         Alamofire.request(.GET, Constant.API_ROOT + "users/sign_in", parameters: User.getAuthenticationParams(email ?? "", password: password ?? ""), encoding: .JSON)
         .responseObject { (response: SHOWUserResponse?, error: NSError?) in
             if let userResponse = response {
+                self.name = userResponse.user?.name
+                self.email = userResponse.user?.email
+                self.password = userResponse.user?.password
                 self.token = userResponse.user?.token
+                //TODO: save userdefaults and auto login
+
                 dispatch_semaphore_signal(semaphore)
             }
         }
