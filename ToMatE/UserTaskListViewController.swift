@@ -8,84 +8,80 @@
 
 import UIKit
 
-class UserTaskListViewController: UITableViewController {
+class UserTaskListViewController: UITableViewController,UITableViewDelegate,UITableViewDataSource {
 
+    let cellIdentifer = "userTaskListCell"
+    var isOpenSections:[Int:Bool] = [Int():true]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "目標"
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
-
+    // MARK: - TableViewDataSource
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
+        return 2
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 0
+        switch section {
+        case 0:
+            return 10
+        case 1:
+            return 5
+        default:
+            return 0
+        }
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifer, forIndexPath: indexPath) as! UserTaskListCustomTableViewCell
+    
+        switch indexPath.row%3 {
+        case 0:
+            cell.iconView.backgroundColor = UIColor.TMEBlueColor()
+            cell.stepLabel.text = "1"
+            cell.titleLabel.text = "機械学習レポート"
+            cell.limitCountLabel.text = "あと123日"
+            cell.limitDayLabel.text = "2015.1.5"
+            
+        case 1:
+            cell.iconView.backgroundColor = UIColor.TMEGreenColor()
+            cell.stepLabel.text = "3"
+            cell.titleLabel.text = "アプリ開発"
+            cell.limitCountLabel.text = "あと10日"
+            cell.limitDayLabel.text = "2015.2.28"
+            
+            
+        case 2:
+            cell.iconView.backgroundColor = UIColor.TMERedColor()
+            cell.stepLabel.text = "5"
+            cell.titleLabel.text = "お買い物"
+            cell.limitCountLabel.text = "あと1234日"
+            cell.limitDayLabel.text = "2015.12.28"
+            
+            
+        default:
+            break 
+        }
+        
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
+ 
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel.new()
+        label.textColor = UIColor.darkGrayColor()
+        label.font = UIFont.systemFontOfSize(13)
+        label.backgroundColor = UIColor.rgb(r: 235, g: 235, b: 235, alpha: 1.0)
+        switch section {
+        case 0:
+            label.text = "   未完了"
+        case 1:
+            label.text = "   完了"
+        default:
+            break
+        }
+        return label
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
