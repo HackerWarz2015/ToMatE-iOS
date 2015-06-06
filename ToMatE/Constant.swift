@@ -7,5 +7,6 @@
 //
 
 class Constant {
-    static let API_ROOT = "http://192.168.100.10:3000/api/v1/"
+    static let API_ROOT = "http://192.168.100.10:3000/api/"
+    static let API_PREFIX = "v1/"
 }
