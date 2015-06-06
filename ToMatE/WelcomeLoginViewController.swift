@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WelcomeLoginViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class WelcomeLoginViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
 
     let cellIdentifer = "welcomeLoginCell"
     
@@ -28,6 +28,17 @@ class WelcomeLoginViewController: UIViewController,UITableViewDelegate,UITableVi
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifer, forIndexPath: indexPath) as! WelcomeLoginTableViewCell
+        cell.textField.tag = indexPath.section + 1
+        switch indexPath.section {
+        case 0:
+            cell.textField.keyboardType = UIKeyboardType.EmailAddress
+        case 1:
+            cell.textField.keyboardType = UIKeyboardType.ASCIICapable
+            cell.textField.secureTextEntry = true
+        default:
+            break
+        }
+
         return cell
     }
     
@@ -42,4 +53,23 @@ class WelcomeLoginViewController: UIViewController,UITableViewDelegate,UITableVi
         }
     }
 
+    //MARK:-TextFieldDelegate
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
+    
+    @IBAction func didTapLoginButton(sender: AnyObject) {
+        let viewController:UITabBarController = self.storyboard?.instantiateViewControllerWithIdentifier("tabBarController") as! UITabBarController
+        self.presentViewController(viewController, animated: true, completion: nil)
+        let address = (self.view.viewWithTag(1) as? UITextField)?.text
+        let pass = (self.view.viewWithTag(2) as? UITextField)?.text
+        NSLog("address:%@,pass:%@", address!,pass!)
+        
+        
+    }
+    
+    @IBAction func didTapScreen(sender: AnyObject) {
+        self.view.endEditing(true)
+    }
 }

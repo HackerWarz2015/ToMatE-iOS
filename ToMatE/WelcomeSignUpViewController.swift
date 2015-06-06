@@ -8,17 +8,18 @@
 
 import UIKit
 
-class WelcomeSignUpViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class WelcomeSignUpViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate {
 
     let textFieldCellIdentifer = "welcomeSignUpCell"
     let iconCellIdentifer = "welcomeSignUpIconCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "アカウント登録"
         // Do any additional setup after loading the view.
     }
     
+    //MARK: - TableViewDataSource
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 4
     }
@@ -29,6 +30,19 @@ class WelcomeSignUpViewController: UIViewController,UITableViewDataSource,UITabl
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier(textFieldCellIdentifer, forIndexPath: indexPath) as!WelcomeSignUpTableViewCell
+        cell.textField.tag = indexPath.section + 1
+        switch indexPath.section {
+        case 0:
+               cell.textField.keyboardType = UIKeyboardType.Default
+        case 1:
+            cell.textField.keyboardType = UIKeyboardType.EmailAddress
+        case 2,3:
+            cell.textField.keyboardType = UIKeyboardType.ASCIICapable
+            cell.textField.secureTextEntry = true
+        default:
+            break
+        }
+
         return cell
     }
     
@@ -47,4 +61,26 @@ class WelcomeSignUpViewController: UIViewController,UITableViewDataSource,UITabl
         }
     }
     
+    //MARK: - TextFieldDelegate
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
+    
+    
+    //MARK: - Other
+    @IBAction func didTapSignUpButton(sender: AnyObject) {
+        let viewController:UITabBarController = self.storyboard?.instantiateViewControllerWithIdentifier("tabBarController") as! UITabBarController
+        self.presentViewController(viewController, animated: true, completion: nil)
+        
+        let name = (self.view.viewWithTag(1) as? UITextField)?.text
+        let address = (self.view.viewWithTag(2) as? UITextField)?.text
+        let pass0 = (self.view.viewWithTag(3) as? UITextField)?.text
+        let pass1 = (self.view.viewWithTag(4) as? UITextField)?.text
+        NSLog("name:%@,address:%@,pass0:%@,pass1:%@", name!,address!,pass0!,pass1!)
+        
+    }
+    @IBAction func didTapScreen(sender: AnyObject) {
+        self.view.endEditing(true)
+    }
 }

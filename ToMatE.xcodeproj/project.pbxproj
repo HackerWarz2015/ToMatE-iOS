@@ -232,8 +232,8 @@
 			isa = PBXGroup;
 			children = (
 				E95459251B234EB400622560 /* WelcomeTopViewController.swift */,
-				E95459331B23568F00622560 /* WelcomeLogin */,
 				E95459341B23569700622560 /* WelcomeSignUp */,
+				E95459331B23568F00622560 /* WelcomeLogin */,
 			);
 			name = Welcome;
 			sourceTree = "<group>";

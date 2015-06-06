@@ -130,29 +130,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQB-BQ-UiG">
-                                <rect key="frame" x="93" y="453" width="135" height="45"/>
-                                <color key="backgroundColor" red="0.1764705882" green="0.60392156860000001" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="66D-69-S5i"/>
-                                    <constraint firstAttribute="width" constant="135" id="WZJ-d9-us1"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="ログイン">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="nt6-76-SwT" kind="modal" id="ks1-QZ-9t0"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="20" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="Yyg-cy-EIg">
-                                <rect key="frame" x="30" y="130" width="260" height="273"/>
+                                <rect key="frame" x="30" y="50" width="260" height="323"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="welcomeLoginCell" id="1vO-Ph-nld" customClass="WelcomeLoginTableViewCell" customModule="ToMatE" customModuleProvider="target">
@@ -165,6 +144,9 @@
                                                     <rect key="frame" x="15" y="7" width="230" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="e0Y-yc-gWT" id="rCz-m3-NUQ"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -183,20 +165,50 @@
                                     <outlet property="delegate" destination="e0Y-yc-gWT" id="1Zn-Mo-Bn5"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQB-BQ-UiG">
+                                <rect key="frame" x="93" y="423" width="135" height="45"/>
+                                <color key="backgroundColor" red="0.1764705882" green="0.60392156860000001" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="66D-69-S5i"/>
+                                    <constraint firstAttribute="width" constant="135" id="WZJ-d9-us1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="ログイン">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapLoginButton:" destination="e0Y-yc-gWT" eventType="touchUpInside" id="upI-CD-86M"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="dQB-BQ-UiG" secondAttribute="centerX" id="Hu8-ug-75U"/>
-                            <constraint firstItem="DT9-u1-up3" firstAttribute="top" secondItem="dQB-BQ-UiG" secondAttribute="bottom" constant="70" id="NmT-ea-FL0"/>
+                            <constraint firstItem="DT9-u1-up3" firstAttribute="top" secondItem="dQB-BQ-UiG" secondAttribute="bottom" constant="100" id="NmT-ea-FL0"/>
                             <constraint firstAttribute="trailing" secondItem="Yyg-cy-EIg" secondAttribute="trailing" constant="30" id="WbM-2D-IOa"/>
                             <constraint firstItem="Yyg-cy-EIg" firstAttribute="leading" secondItem="jlq-sY-nsa" secondAttribute="leading" constant="30" id="mxn-mH-aBs"/>
                             <constraint firstItem="dQB-BQ-UiG" firstAttribute="top" secondItem="Yyg-cy-EIg" secondAttribute="bottom" constant="50" id="rds-Dv-eqb"/>
-                            <constraint firstItem="Yyg-cy-EIg" firstAttribute="top" secondItem="jlq-sY-nsa" secondAttribute="top" constant="130" id="slK-Z6-rcd"/>
+                            <constraint firstItem="Yyg-cy-EIg" firstAttribute="top" secondItem="jlq-sY-nsa" secondAttribute="top" constant="50" id="slK-Z6-rcd"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="27p-iU-bim" appends="YES" id="yb9-Uk-2wv"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Lbi-7Y-2JY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kt8-gN-yeq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="27p-iU-bim">
+                    <connections>
+                        <action selector="didTapScreen:" destination="e0Y-yc-gWT" id="TK6-YK-90O"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-517" y="337"/>
         </scene>
@@ -212,8 +224,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="35" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="HBp-73-2Zw">
-                                <rect key="frame" x="30" y="0.0" width="260" height="403"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="22" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="HBp-73-2Zw">
+                                <rect key="frame" x="30" y="-20" width="260" height="393"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="welcomeSignUpCell" id="JgC-ng-jxK" customClass="WelcomeSignUpTableViewCell" customModule="ToMatE" customModuleProvider="target">
@@ -223,9 +235,12 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jBb-Ps-GXr">
-                                                    <rect key="frame" x="15" y="3" width="230" height="30"/>
+                                                    <rect key="frame" x="15" y="-4" width="230" height="31"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="3Tq-cu-tly" id="JsC-Sh-zJY"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -245,7 +260,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Evj-ln-LgP">
-                                <rect key="frame" x="93" y="453" width="135" height="45"/>
+                                <rect key="frame" x="93" y="423" width="135" height="45"/>
                                 <color key="backgroundColor" red="0.92941176469999998" green="0.63137254899999995" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="R6W-uu-WGb"/>
@@ -262,30 +277,39 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="nt6-76-SwT" kind="modal" id="r8i-6z-QJb"/>
+                                    <action selector="didTapSignUpButton:" destination="3Tq-cu-tly" eventType="touchUpInside" id="iAj-nS-ZOh"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="HBp-73-2Zw" firstAttribute="top" secondItem="TgS-qI-hq8" secondAttribute="topMargin" id="1rg-iQ-3cI"/>
-                            <constraint firstItem="LiF-ni-E0z" firstAttribute="top" secondItem="Evj-ln-LgP" secondAttribute="bottom" constant="70" id="9fN-nZ-nyX"/>
+                            <constraint firstItem="HBp-73-2Zw" firstAttribute="top" secondItem="TgS-qI-hq8" secondAttribute="topMargin" constant="-20" id="1rg-iQ-3cI"/>
+                            <constraint firstItem="LiF-ni-E0z" firstAttribute="top" secondItem="Evj-ln-LgP" secondAttribute="bottom" constant="100" id="9fN-nZ-nyX"/>
                             <constraint firstItem="HBp-73-2Zw" firstAttribute="leading" secondItem="TgS-qI-hq8" secondAttribute="leading" constant="30" id="Aub-WC-pMM"/>
                             <constraint firstAttribute="centerX" secondItem="Evj-ln-LgP" secondAttribute="centerX" id="a7d-bk-ZlM"/>
                             <constraint firstItem="Evj-ln-LgP" firstAttribute="top" secondItem="HBp-73-2Zw" secondAttribute="bottom" constant="50" id="bwq-38-xU1"/>
                             <constraint firstAttribute="trailing" secondItem="HBp-73-2Zw" secondAttribute="trailing" constant="30" id="ijc-0X-jxu"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Szz-iw-agk" appends="YES" id="cXI-LD-uT3"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Qc2-1v-see"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XfO-E6-BeZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Szz-iw-agk">
+                    <connections>
+                        <action selector="didTapScreen:" destination="3Tq-cu-tly" id="ga0-d4-Mue"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-517" y="983"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="rgT-dC-VkD">
             <objects>
-                <tabBarController id="nt6-76-SwT" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBarController" id="nt6-76-SwT" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="zDg-Jt-ejM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -482,15 +506,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon.png" width="52" height="51"/>
-        <image name="logo.png" width="326" height="165"/>
+        <image name="icon.png" width="50" height="50"/>
+        <image name="logo.png" width="218" height="88"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="ks1-QZ-9t0"/>
-    </inferredMetricsTieBreakers>
 </document>
