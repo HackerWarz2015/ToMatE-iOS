@@ -21,12 +21,14 @@ class GetUsersResponse: Mappable {
     func mapping(map: Map) {
         users <- map["users"]
     }
+    
 }
 
 class ShowUserResponse: Mappable {
     var user: User?
 
     init() {}
+
     required init?(_ map: Map) {
         mapping(map)
     }
@@ -34,12 +36,14 @@ class ShowUserResponse: Mappable {
     func mapping(map: Map) {
         user <- map["user"]
     }
+
 }
 
 
 
 
 class User: Mappable {
+
     var name: String?
     var steps: Int?
     var id: Int?
@@ -57,4 +61,5 @@ class User: Mappable {
         id <- map["id"]
         email <- map["email"]
     }
+
 }

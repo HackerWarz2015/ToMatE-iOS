@@ -41,6 +41,6 @@ class Reward: Mappable {
         title <- map["title"]
         isShare <- map["is_share"]
         isPublic <- map["is_public"]
-
     }
+
 }

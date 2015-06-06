@@ -53,4 +53,5 @@ class UserTask: Mappable {
         userID <- map["user_id"]
         doneAt <- map["done_at"]
     }
+    
 }
