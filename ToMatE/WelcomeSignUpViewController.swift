@@ -1,0 +1,86 @@
+//
+//  WelcomeSignUpViewController.swift
+//  ToMatE
+//
+//  Created by minami on 6/7/15.
+//  Copyright (c) 2015 KazuyaMIURA. All rights reserved.
+//
+
+import UIKit
+
+class WelcomeSignUpViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate {
+
+    let textFieldCellIdentifer = "welcomeSignUpCell"
+    let iconCellIdentifer = "welcomeSignUpIconCell"
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = "アカウント登録"
+        // Do any additional setup after loading the view.
+    }
+    
+    //MARK: - TableViewDataSource
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 4
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCellWithIdentifier(textFieldCellIdentifer, forIndexPath: indexPath) as!WelcomeSignUpTableViewCell
+        cell.textField.tag = indexPath.section + 1
+        switch indexPath.section {
+        case 0:
+               cell.textField.keyboardType = UIKeyboardType.Default
+        case 1:
+            cell.textField.keyboardType = UIKeyboardType.EmailAddress
+        case 2,3:
+            cell.textField.keyboardType = UIKeyboardType.ASCIICapable
+            cell.textField.secureTextEntry = true
+        default:
+            break
+        }
+
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "名前"
+        case 1:
+            return "メールアドレス"
+        case 2:
+            return "パスワード"
+        case 3:
+            return "パスワードの確認"
+        default:
+            return ""
+        }
+    }
+    
+    //MARK: - TextFieldDelegate
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
+    
+    
+    //MARK: - Other
+    @IBAction func didTapSignUpButton(sender: AnyObject) {
+        let viewController:UITabBarController = self.storyboard?.instantiateViewControllerWithIdentifier("tabBarController") as! UITabBarController
+        self.presentViewController(viewController, animated: true, completion: nil)
+        
+        let name = (self.view.viewWithTag(1) as? UITextField)?.text
+        let address = (self.view.viewWithTag(2) as? UITextField)?.text
+        let pass0 = (self.view.viewWithTag(3) as? UITextField)?.text
+        let pass1 = (self.view.viewWithTag(4) as? UITextField)?.text
+        NSLog("name:%@,address:%@,pass0:%@,pass1:%@", name!,address!,pass0!,pass1!)
+        
+    }
+    @IBAction func didTapScreen(sender: AnyObject) {
+        self.view.endEditing(true)
+    }
+}
