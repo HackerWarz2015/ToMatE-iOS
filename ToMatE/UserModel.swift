@@ -40,6 +40,10 @@ class SHOWUserResponse: Mappable {
 
 }
 
+class POSTUserAuthenticationResponse {
+}
+
+
 
 class User: Mappable {
 
@@ -48,6 +52,7 @@ class User: Mappable {
     var id: Int?
     var email: String?
     var friendIDs: [Int]?
+    var token: String?
 
     init() {}
 
@@ -61,6 +66,15 @@ class User: Mappable {
         id <- map["id"]
         email <- map["email"]
         friendIDs <- map["friend_ids"]
+        token <- map["authentication_token"]
+    }
+
+    class func AuthenticationParamss(email: String?, password: String?) -> [String: AnyObject] {
+        return ["user": ["email": email ?? "", "password": password ?? ""]]
+    }
+
+    class func getCreateUserParams(name: String?, email: String?, password: String?, passwordConf: String?) -> [String: AnyObject] {
+        return ["user": ["name": name ?? "", "email": email ?? "", "password": password ?? "", "password_confirmation": passwordConf ?? ""]]
     }
 
 }
