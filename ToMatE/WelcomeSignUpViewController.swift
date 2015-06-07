@@ -31,7 +31,7 @@ class WelcomeSignUpViewController: UIViewController,UITableViewDataSource,UITabl
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier(textFieldCellIdentifer, forIndexPath: indexPath) as!WelcomeSignUpTableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier(textFieldCellIdentifer, forIndexPath: indexPath) as! TextFieldTableViewCell
         cell.textField.tag = indexPath.section + 1
         switch indexPath.section {
         case 0:

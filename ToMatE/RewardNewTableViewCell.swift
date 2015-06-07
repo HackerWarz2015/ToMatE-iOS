@@ -1,5 +1,5 @@
 //
-//  WelcomeSignUpTableViewCell.swift
+//  RewardNewTableViewCell.swift
 //  ToMatE
 //
 //  Created by minami on 6/7/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WelcomeSignUpTableViewCell: UITableViewCell {
+class RewardNewTableViewCell: UITableViewCell {
 
     @IBOutlet weak var textField: UITextField!
     override func awakeFromNib() {
