@@ -15,8 +15,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        if NSUserDefaults.standardUserDefaults().boolForKey("loggedIn") {
+            let ud = NSUserDefaults.standardUserDefaults()
+            LoggedInUser.currentUser.setName(ud.stringForKey("name")!)
+            LoggedInUser.currentUser.setPassword(ud.stringForKey("pass")!)
+            LoggedInUser.currentUser.setEmail(ud.stringForKey("email")!)
+            LoggedInUser.currentUser.login()
+        }
         return true
+    }
+
+    func loggedIn() {
+        self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("tabBarController") as? UITabBarController
+    }
+
+    func loggedOut() {
+        self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as? UIViewController
     }
 
     func applicationWillResignActive(application: UIApplication) {

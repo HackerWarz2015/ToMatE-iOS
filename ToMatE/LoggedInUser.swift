@@ -78,6 +78,7 @@ class LoggedInUser {
     func repossessionAuthenticationToken() -> Bool {
         let semaphore = dispatch_semaphore_create(0)
         let oldToken = token
+        var result = false
         Alamofire.request(.GET, Constant.API_ROOT + "users/sign_in", parameters: User.getAuthenticationParams(email ?? "", password: password ?? ""), encoding: .JSON)
         .responseObject { (response: SHOWUserResponse?, error: NSError?) in
             if let userResponse = response {
@@ -85,16 +86,28 @@ class LoggedInUser {
                 self.email = userResponse.user?.email
                 self.password = userResponse.user?.password
                 self.token = userResponse.user?.token
-
+                result = true
                 NSUserDefaults.standardUserDefaults().setObject(self.email, forKey: "email")
                 NSUserDefaults.standardUserDefaults().setObject(self.password, forKey: "pass")
                 NSUserDefaults.standardUserDefaults().setObject(self.token, forKey: "token")
-
-                dispatch_semaphore_signal(semaphore)
+                NSUserDefaults.standardUserDefaults().setBool(true, forKey: "loggedIn")
             }
+            dispatch_semaphore_signal(semaphore)
         }
         dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
-        return token != oldToken
+        return result
     }
+
+    func logout() {
+        NSUserDefaults.standardUserDefaults().setBool(false, forKey: "loggedIn")
+        (UIApplication.sharedApplication().delegate as! AppDelegate).loggedOut()
+    }
+
+    func login() {
+        if repossessionAuthenticationToken() {
+            (UIApplication.sharedApplication().delegate as! AppDelegate).loggedIn()
+        }
+    }
+
 
 }
