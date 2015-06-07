@@ -75,11 +75,6 @@ class RewardShowViewController: UIViewController,UICollectionViewDataSource,UICo
             cell.topLine.hidden = false
         }
         
-        cell.stepLabel.text = String(indexPath.item+1)
-        if indexPath.item % 10 >= 5 && indexPath.item % 10 <= 9 {
-            
-        }
-        
         switch indexPath.item % 10 {
         case 0,1,2,3,4,7:
             cell.step = indexPath.item
