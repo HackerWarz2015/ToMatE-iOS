@@ -12,11 +12,6 @@ class RewardNewViewController: UIViewController,UITableViewDelegate,UITableViewD
 
     var step = 0
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 2
     }
@@ -37,7 +32,7 @@ class RewardNewViewController: UIViewController,UITableViewDelegate,UITableViewD
             let cell = tableView.dequeueReusableCellWithIdentifier("rewardNewStepCell", forIndexPath: indexPath) as! RewardNewStepTableViewCell
             cell.textField.tag = indexPath.section + 1
             cell.textField.keyboardType = UIKeyboardType.NumberPad
-            cell.textField.text = String(step)
+            cell.textField.text = (step == 0) ? "" : String(step)
             return cell
         default:
             return UITableViewCell()

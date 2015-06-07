@@ -16,8 +16,7 @@ class RewardShowViewController: UIViewController,UICollectionViewDataSource,UICo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.title = "ごほうび"
     }
 
     
@@ -32,11 +31,12 @@ class RewardShowViewController: UIViewController,UICollectionViewDataSource,UICo
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let nextVC = self.storyboard?.instantiateViewControllerWithIdentifier("rewardNewVC") as! RewardNewViewController
-        nextVC.step = indexPath.row
+        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! RewardCollectionViewCell
+        nextVC.step = cell.step
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
-    //以下はいじらない
+    //以下はいじらなくて大丈夫
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 100
     }
@@ -82,15 +82,15 @@ class RewardShowViewController: UIViewController,UICollectionViewDataSource,UICo
         
         switch indexPath.item % 10 {
         case 0,1,2,3,4,7:
-            cell.stepLabel.text = String(indexPath.item)
+            cell.step = indexPath.item
         case 5:
-            cell.stepLabel.text = String(indexPath.item+4)
+            cell.step = indexPath.item+4
         case 6:
-            cell.stepLabel.text = String(indexPath.item+2)
+            cell.step = indexPath.item+2
         case 8:
-            cell.stepLabel.text = String(indexPath.item-2)
+            cell.step = indexPath.item-2
         case 9:
-            cell.stepLabel.text = String(indexPath.item-4)
+            cell.step = indexPath.item-4
         default:
             break
         }
