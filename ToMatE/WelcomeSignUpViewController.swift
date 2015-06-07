@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireObjectMapper
 
 class WelcomeSignUpViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate {
 
@@ -71,16 +73,65 @@ class WelcomeSignUpViewController: UIViewController,UITableViewDataSource,UITabl
     //MARK: - Other
     @IBAction func didTapSignUpButton(sender: AnyObject) {
         let viewController:UITabBarController = self.storyboard?.instantiateViewControllerWithIdentifier("tabBarController") as! UITabBarController
-        self.presentViewController(viewController, animated: true, completion: nil)
-        
+
+        var errorMessage: String = ""
+
+        if (self.view.viewWithTag(1) as? UITextField)?.text == "" {
+            errorMessage += "アカウント名が入力されていないようです\n"
+        }
+
+        if (self.view.viewWithTag(2) as? UITextField)?.text  == "" {
+            errorMessage += "メールアドレスが入力されていないようです\n"
+        }
+
+        if (self.view.viewWithTag(3) as? UITextField)?.text ==  "" {
+            errorMessage += "パスワードが入力されていないようです\n"
+        }
+
+        if (self.view.viewWithTag(4) as? UITextField)?.text ==  "" {
+            errorMessage += "パスワード確認が入力されていないようです\n"
+        }
+
         let name = (self.view.viewWithTag(1) as? UITextField)?.text
         let address = (self.view.viewWithTag(2) as? UITextField)?.text
         let pass0 = (self.view.viewWithTag(3) as? UITextField)?.text
         let pass1 = (self.view.viewWithTag(4) as? UITextField)?.text
-        NSLog("name:%@,address:%@,pass0:%@,pass1:%@", name!,address!,pass0!,pass1!)
-        
+
+        if (pass0 != pass1) {
+            errorMessage += "パスワードとパスワード確認が一致しません。"
+        }
+
+        if errorMessage != "" {
+            showAlert(errorMessage)
+            return
+        }
+        let params = User.getCreateUserParams(name!, email: address!, password: pass0!, passwordConf: pass0!)
+
+        Alamofire.request(.POST, String(Constant.API_ROOT + "users.json"), parameters: params)
+            .responseObject { (response: User?, error: NSError?) in
+                println(response)
+                if error != nil {
+                    return
+                }
+                if let user = response {
+                    LoggedInUser.currentUser.setPassword(pass0!)
+                    LoggedInUser.currentUser.setName((user.name)!)
+                    LoggedInUser.currentUser.setEmail((user.email)!)
+                    LoggedInUser.currentUser.repossessionAuthenticationToken()
+                }
+        }
     }
+
     @IBAction func didTapScreen(sender: AnyObject) {
         self.view.endEditing(true)
     }
+
+    func showAlert(message: String!) {
+        var alert = UIAlertView()
+        alert.title = "確認"
+        alert.message = message
+        alert.addButtonWithTitle("OK")
+        alert.show()
+    }
+
 }
