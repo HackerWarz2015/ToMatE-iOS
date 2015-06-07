@@ -15,13 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-//        if NSUserDefaults.standardUserDefaults().boolForKey("loggedIn") {
-//            let ud = NSUserDefaults.standardUserDefaults()
-//            LoggedInUser.currentUser.setName(ud.objectForKey("name") as! String)
-//            LoggedInUser.currentUser.setPassword(ud.objectForKey("pass") as! String)
-//            LoggedInUser.currentUser.setEmail(ud.objectForKey("email") as! String)
-//            LoggedInUser.currentUser.login()
-//        }
+        if NSUserDefaults.standardUserDefaults().boolForKey("loggedIn") {
+            let ud = NSUserDefaults.standardUserDefaults()
+            LoggedInUser.currentUser.setName(ud.stringForKey("name")!)
+            LoggedInUser.currentUser.setPassword(ud.stringForKey("pass")!)
+            LoggedInUser.currentUser.setEmail(ud.stringForKey("email")!)
+            LoggedInUser.currentUser.login()
+        }
         return true
     }
 

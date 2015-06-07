@@ -78,21 +78,24 @@ class LoggedInUser {
     func repossessionAuthenticationToken() {
 
         let oldToken = token
-        Alamofire.request(.GET, String(Constant.API_ROOT + "users/sign_in.json"), parameters: User.getAuthenticationParams(email ?? "", password: password ?? ""))
+        Alamofire.request(.POST, String(Constant.API_ROOT + "users/sign_in.json"), parameters: User.getAuthenticationParams(email ?? "", password: password ?? ""))
         .responseObject { (response: User?, error: NSError?) in
             if error != nil {
                 return
             }
+
             if let user = response {
+
                 self.name = user.name
                 self.email = user.email
                 self.token = user.token
-                println(self.token)
-                NSUserDefaults.standardUserDefaults().setObject(self.email, forKey: "email")
-                NSUserDefaults.standardUserDefaults().setObject(self.password, forKey: "pass")
-                NSUserDefaults.standardUserDefaults().setObject(self.token, forKey: "token")
-                NSUserDefaults.standardUserDefaults().setBool(true, forKey: "loggedIn")
-                NSUserDefaults.standardUserDefaults().synchronize()
+                let ud = NSUserDefaults.standardUserDefaults()
+                ud.setObject(self.name, forKey: "name")
+                ud.setObject(self.email, forKey: "email")
+                ud.setObject(self.password, forKey: "pass")
+                ud.setObject(self.token, forKey: "token")
+                ud.setBool(true, forKey: "loggedIn")
+                ud.synchronize()
                 (UIApplication.sharedApplication().delegate as! AppDelegate).loggedIn()
             }
         }

@@ -114,7 +114,6 @@ class WelcomeSignUpViewController: UIViewController,UITableViewDataSource,UITabl
                     return
                 }
                 if let user = response {
-                    println(user)
                     LoggedInUser.currentUser.setPassword(pass0!)
                     LoggedInUser.currentUser.setName((user.name)!)
                     LoggedInUser.currentUser.setEmail((user.email)!)
