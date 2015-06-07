@@ -31,7 +31,9 @@ class RewardShowViewController: UIViewController,UICollectionViewDataSource,UICo
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier("toRewardNewVC", sender: nil)
+        let nextVC = self.storyboard?.instantiateViewControllerWithIdentifier("rewardNewVC") as! RewardNewViewController
+        nextVC.step = indexPath.row
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
     //以下はいじらない

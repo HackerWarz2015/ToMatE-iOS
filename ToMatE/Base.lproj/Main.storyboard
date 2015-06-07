@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="aoc-V2-hb6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="aoc-V2-hb6">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -220,7 +220,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JgC-ng-jxK" id="Vu9-sO-Ol6">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jBb-Ps-GXr">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jBb-Ps-GXr">
                                                     <rect key="frame" x="15" y="-4" width="230" height="31"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -305,7 +305,6 @@
                     <connections>
                         <segue destination="Zeg-RP-XNH" kind="relationship" relationship="viewControllers" id="upj-js-wS3"/>
                         <segue destination="fYh-Xo-zrO" kind="relationship" relationship="viewControllers" id="Cqd-pO-jsq"/>
-                        <segue destination="6rp-Xc-YrW" kind="relationship" relationship="viewControllers" id="Apa-pe-JmA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tcb-Y4-Oyj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -540,7 +539,7 @@
         <!--Reward New View Controller-->
         <scene sceneID="zUX-ns-LkJ">
             <objects>
-                <viewController id="70v-th-4y8" customClass="RewardNewViewController" customModule="ToMatE" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="rewardNewVC" id="70v-th-4y8" customClass="RewardNewViewController" customModule="ToMatE" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hWn-3Q-RIi"/>
                         <viewControllerLayoutGuide type="bottom" id="jRH-M8-577"/>
@@ -578,13 +577,13 @@
                                             <outlet property="textField" destination="e2s-Ld-YWM" id="TYy-Xx-P6n"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gwM-Gg-DCu">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="rewardNewStepCell" id="gwM-Gg-DCu" customClass="RewardNewStepTableViewCell" customModule="ToMatE" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gwM-Gg-DCu" id="sOk-MZ-sgu">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Zs-M4-RWW">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Zs-M4-RWW">
                                                     <rect key="frame" x="15" y="7" width="50" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="oCI-5a-5FU"/>
@@ -593,8 +592,8 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="歩まで行ったらごほうびをもらう！" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQq-Wb-0Tl">
-                                                    <rect key="frame" x="75" y="15" width="176" height="14"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <rect key="frame" x="70" y="15" width="192" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -603,10 +602,13 @@
                                                 <constraint firstAttribute="centerY" secondItem="9Zs-M4-RWW" secondAttribute="centerY" id="1ow-Q7-i10"/>
                                                 <constraint firstItem="9Zs-M4-RWW" firstAttribute="leading" secondItem="sOk-MZ-sgu" secondAttribute="leading" constant="15" id="OWM-Cu-aLc"/>
                                                 <constraint firstAttribute="centerY" secondItem="9Zs-M4-RWW" secondAttribute="centerY" id="TLY-5q-EAP"/>
-                                                <constraint firstItem="NQq-Wb-0Tl" firstAttribute="leading" secondItem="9Zs-M4-RWW" secondAttribute="trailing" constant="10" id="fFE-P2-WJe"/>
+                                                <constraint firstItem="NQq-Wb-0Tl" firstAttribute="leading" secondItem="9Zs-M4-RWW" secondAttribute="trailing" constant="5" id="fFE-P2-WJe"/>
                                                 <constraint firstAttribute="centerY" secondItem="NQq-Wb-0Tl" secondAttribute="centerY" id="pS1-j0-AGT"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="textField" destination="9Zs-M4-RWW" id="2eh-9I-EME"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -708,7 +710,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cSW-d5-QOE" id="YYw-Rb-EJA">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qP4-uh-14o" userLabel="limitView">
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qP4-uh-14o" userLabel="limitView">
                                             <rect key="frame" x="220" y="8" width="90" height="30"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="あと123日" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gg8-4Y-nol" userLabel="limitCountLabel" customClass="PaddingUILabel" customModule="ToMatE" customModuleProvider="target">
