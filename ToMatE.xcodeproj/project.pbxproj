@@ -438,6 +438,7 @@
 				E95459001B22E36E00622560 /* UserTaskListViewController.swift in Sources */,
 				E95459221B23156B00622560 /* OutlineUILabel.swift in Sources */,
 				499E58E51B2343FC00EEBD45 /* LoggedInUser.swift in Sources */,
+				E992B5191B23AEF400DC55B8 /* LabelTableViewCell.swift in Sources */,
 				E95459191B2302E800622560 /* PaddingUILabel.swift in Sources */,
 				E992B5221B23E13B00DC55B8 /* RewardCollectionViewCell.swift in Sources */,
 				E954592E1B23544900622560 /* WelcomeSignUpViewController.swift in Sources */,
