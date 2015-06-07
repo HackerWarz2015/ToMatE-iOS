@@ -36,6 +36,7 @@
 		E992B5241B23FCA200DC55B8 /* RewardNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E992B5231B23FCA200DC55B8 /* RewardNewViewController.swift */; };
 		E992B5261B23FEF100DC55B8 /* step.png in Resources */ = {isa = PBXBuildFile; fileRef = E992B5251B23FEF100DC55B8 /* step.png */; };
 		E992B52A1B2406AB00DC55B8 /* RewardNewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E992B5291B2406AB00DC55B8 /* RewardNewTableViewCell.swift */; };
+		E992B52E1B2408D200DC55B8 /* RewardNewStepTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E992B52D1B2408D200DC55B8 /* RewardNewStepTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		E992B5231B23FCA200DC55B8 /* RewardNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardNewViewController.swift; sourceTree = "<group>"; };
 		E992B5251B23FEF100DC55B8 /* step.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = step.png; path = Image/step.png; sourceTree = SOURCE_ROOT; };
 		E992B5291B2406AB00DC55B8 /* RewardNewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardNewTableViewCell.swift; sourceTree = "<group>"; };
+		E992B52D1B2408D200DC55B8 /* RewardNewStepTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardNewStepTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,12 +268,29 @@
 		E992B51C1B23DECD00DC55B8 /* Reward */ = {
 			isa = PBXGroup;
 			children = (
-				E992B51D1B23DEEB00DC55B8 /* RewardShowViewController.swift */,
-				E992B5231B23FCA200DC55B8 /* RewardNewViewController.swift */,
-				E992B5291B2406AB00DC55B8 /* RewardNewTableViewCell.swift */,
-				E992B5211B23E13B00DC55B8 /* RewardCollectionViewCell.swift */,
+				E992B52B1B2408B000DC55B8 /* RewardShow */,
+				E992B52C1B2408BC00DC55B8 /* RewardNew */,
 			);
 			name = Reward;
+			sourceTree = "<group>";
+		};
+		E992B52B1B2408B000DC55B8 /* RewardShow */ = {
+			isa = PBXGroup;
+			children = (
+				E992B51D1B23DEEB00DC55B8 /* RewardShowViewController.swift */,
+				E992B5211B23E13B00DC55B8 /* RewardCollectionViewCell.swift */,
+			);
+			name = RewardShow;
+			sourceTree = "<group>";
+		};
+		E992B52C1B2408BC00DC55B8 /* RewardNew */ = {
+			isa = PBXGroup;
+			children = (
+				E992B5231B23FCA200DC55B8 /* RewardNewViewController.swift */,
+				E992B5291B2406AB00DC55B8 /* RewardNewTableViewCell.swift */,
+				E992B52D1B2408D200DC55B8 /* RewardNewStepTableViewCell.swift */,
+			);
+			name = RewardNew;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,6 +447,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E992B52E1B2408D200DC55B8 /* RewardNewStepTableViewCell.swift in Sources */,
 				E992B5141B23AD5B00DC55B8 /* TextFieldTableViewCell.swift in Sources */,
 				4981F2161B22EA0C00C574D7 /* UserTaskModel.swift in Sources */,
 				E954592C1B23543C00622560 /* WelcomeLoginViewController.swift in Sources */,
