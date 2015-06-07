@@ -69,12 +69,18 @@ class UserTaskListViewController: UITableViewController,UITableViewDelegate,UITa
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifer, forIndexPath: indexPath) as! UserTaskListCustomTableViewCell
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "YYYY.MM.dd"
-        //TODO: limit count
+        let today = NSDate()
+        let cal = NSCalendar.currentCalendar()
+
+
         switch indexPath.section {
             case 0:
                 cell.stepLabel.text = String(dividedData.0[indexPath.row].steps!)
                 cell.titleLabel.text = dividedData.0[indexPath.row].title
                 cell.limitDayLabel.text = dateFormatter.stringFromDate(dividedData.0[indexPath.row].limitDate!)
+                let dateComp = cal.components(NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay, fromDate: dividedData.0[indexPath.row].limitDate!, toDate: today, options: NSCalendarOptions.MatchFirst)
+                cell.limitCountLabel.text = String(dateComp.month) + String(dateComp.day)
+
             case 1:
                 cell.stepLabel.text = String(dividedData.1[indexPath.row].steps!)
                 cell.titleLabel.text = dividedData.1[indexPath.row].title

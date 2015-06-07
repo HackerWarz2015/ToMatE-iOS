@@ -105,19 +105,20 @@ class WelcomeSignUpViewController: UIViewController,UITableViewDataSource,UITabl
             showAlert(errorMessage)
             return
         }
+        let params = User.getCreateUserParams(name!, email: address!, password: pass0!, passwordConf: pass0!)
 
-        Alamofire.request(.GET, Constant.API_ROOT + "users/", parameters: User.getCreateUserParams(name!, email: address!, password: pass0!, passwordConf: pass1!), encoding: .JSON)
-            .responseObject { (response: SHOWUserResponse?, error: NSError?) in
+        Alamofire.request(.POST, String(Constant.API_ROOT + "users.json"), parameters: params)
+            .responseObject { (response: User?, error: NSError?) in
+                println(response)
                 if error != nil {
                     return
                 }
-                if let userResponse = response {
-                    LoggedInUser.currentUser.setName((userResponse.user?.name)!)
-                    LoggedInUser.currentUser.setPassword((userResponse.user?.password)!)
-                    LoggedInUser.currentUser.setEmail((userResponse.user?.email)!)
-                    if LoggedInUser.currentUser.repossessionAuthenticationToken() {
-                        self.presentViewController(viewController, animated: true, completion: nil)
-                    }
+                if let user = response {
+                    println(user)
+                    LoggedInUser.currentUser.setPassword(pass0!)
+                    LoggedInUser.currentUser.setName((user.name)!)
+                    LoggedInUser.currentUser.setEmail((user.email)!)
+                    LoggedInUser.currentUser.repossessionAuthenticationToken()
                 }
         }
     }

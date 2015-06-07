@@ -24,9 +24,31 @@ class GETUsersResponse: Mappable {
     
 }
 
+class UserError: Mappable {
+    var email: String?
+    var name: String?
+    var password: String?
+    var passwordConf: String?
+
+    init () {}
+
+    required init?(_ map: Map) {
+
+    }
+
+    func mapping(map: Map) {
+        email <- map["email"]
+        name <- map["name"]
+        password <- map["password"]
+    }
+
+}
+
+
 class SHOWUserResponse: Mappable {
     
     var user: User?
+    var errors: [String: String]?
 
     init() {}
 
@@ -35,7 +57,9 @@ class SHOWUserResponse: Mappable {
     }
 
     func mapping(map: Map) {
+        errors <- map["errors"]
         user <- map["user"]
+
     }
 
 }
@@ -75,7 +99,7 @@ class User: Mappable {
     }
 
     class func getCreateUserParams(name: String, email: String, password: String, passwordConf: String) -> [String: AnyObject] {
-        return ["user": ["name": name, "email": email, "password": password, "password_confirmation": passwordConf]]
+        return ["user": ["name": name, "email": email, "password": password, "password_confirmation": passwordConf], "registration": ["name": name, "email": email, "password": password, "password_confirmation": passwordConf]]
     }
 
 }

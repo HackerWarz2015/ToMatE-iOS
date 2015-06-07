@@ -67,9 +67,8 @@ class WelcomeLoginViewController: UIViewController,UITableViewDelegate,UITableVi
 
         LoggedInUser.currentUser.setEmail(address ?? "")
         LoggedInUser.currentUser.setPassword(pass ?? "")
-        if LoggedInUser.currentUser.repossessionAuthenticationToken() {
-            self.presentViewController(viewController, animated: true, completion: nil)
-        }
+        LoggedInUser.currentUser.repossessionAuthenticationToken()
+
         
     }
     

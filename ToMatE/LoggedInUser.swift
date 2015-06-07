@@ -75,30 +75,27 @@ class LoggedInUser {
     }
 
     //MARK: api
-    func repossessionAuthenticationToken() -> Bool {
-        let semaphore = dispatch_semaphore_create(0)
+    func repossessionAuthenticationToken() {
+
         let oldToken = token
-        var result = false
-        Alamofire.request(.GET, Constant.API_ROOT + "users/sign_in", parameters: User.getAuthenticationParams(email ?? "", password: password ?? ""), encoding: .JSON)
-        .responseObject { (response: SHOWUserResponse?, error: NSError?) in
+        Alamofire.request(.GET, String(Constant.API_ROOT + "users/sign_in.json"), parameters: User.getAuthenticationParams(email ?? "", password: password ?? ""))
+        .responseObject { (response: User?, error: NSError?) in
             if error != nil {
                 return
             }
-            if let userResponse = response {
-                self.name = userResponse.user?.name
-                self.email = userResponse.user?.email
-                self.password = userResponse.user?.password
-                self.token = userResponse.user?.token
-                result = true
+            if let user = response {
+                self.name = user.name
+                self.email = user.email
+                self.token = user.token
+                println(self.token)
                 NSUserDefaults.standardUserDefaults().setObject(self.email, forKey: "email")
                 NSUserDefaults.standardUserDefaults().setObject(self.password, forKey: "pass")
                 NSUserDefaults.standardUserDefaults().setObject(self.token, forKey: "token")
                 NSUserDefaults.standardUserDefaults().setBool(true, forKey: "loggedIn")
+                NSUserDefaults.standardUserDefaults().synchronize()
+                (UIApplication.sharedApplication().delegate as! AppDelegate).loggedIn()
             }
-            dispatch_semaphore_signal(semaphore)
         }
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
-        return result
     }
 
     func logout() {
@@ -107,9 +104,8 @@ class LoggedInUser {
     }
 
     func login() {
-        if repossessionAuthenticationToken() {
-            (UIApplication.sharedApplication().delegate as! AppDelegate).loggedIn()
-        }
+        repossessionAuthenticationToken()
+
     }
 
 
