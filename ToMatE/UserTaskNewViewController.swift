@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireObjectMapper
 
 class UserTaskNewViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
 
@@ -135,7 +137,22 @@ class UserTaskNewViewController: UIViewController,UITableViewDelegate,UITableVie
         let title = (self.view.viewWithTag(1) as? UITextField)?.text
         let limit = (self.view.viewWithTag(2) as? UILabel)?.text
         let importance = sliderValue
-        NSLog("title:%@,limit:%@,import:%f", title!,limit!,importance)
+
+
+
+        Alamofire.request(.POST, String(Constant.API_ROOT + Constant.API_PREFIX + "users/\(LoggedInUser.currentUser.getId()!)/user_tasks?token=" + LoggedInUser.currentUser.getToken()!), parameters: UserTask.getCreateUserTaskParams(title!, difficulty: Int(importance), steps: Int(importance*2+1), limit: limit!))
+            .responseObject{ (response: POSTUserTaskResponse?, error: NSError?) in
+                println(response?.userTask)
+                println(error)
+                if error != nil {
+                    return
+                }
+
+                if let userTasks = response?.userTask {
+
+                }
+        }
+
         self.navigationController?.popViewControllerAnimated(true)
     }
     
