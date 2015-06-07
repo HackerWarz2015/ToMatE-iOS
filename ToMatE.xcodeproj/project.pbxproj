@@ -18,7 +18,6 @@
 		499E58E31B2316AF00EEBD45 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499E58E21B2316AF00EEBD45 /* Constant.swift */; };
 		6239CAA56D4899EAE3278087 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2F381799283B328CE08564 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E95459001B22E36E00622560 /* UserTaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95458FF1B22E36E00622560 /* UserTaskListViewController.swift */; };
-		E95459041B22F8B600622560 /* UserTaskNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95459031B22F8B600622560 /* UserTaskNewViewController.swift */; };
 		E95459061B22FC6A00622560 /* UserTaskListCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95459051B22FC6A00622560 /* UserTaskListCustomTableViewCell.swift */; };
 		E95459101B2301C100622560 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954590F1B2301C100622560 /* UIColorExtension.swift */; };
 		E95459191B2302E800622560 /* PaddingUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95459181B2302E800622560 /* PaddingUILabel.swift */; };
@@ -26,10 +25,12 @@
 		E95459261B234EB400622560 /* WelcomeTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95459251B234EB400622560 /* WelcomeTopViewController.swift */; };
 		E954592C1B23543C00622560 /* WelcomeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954592B1B23543C00622560 /* WelcomeLoginViewController.swift */; };
 		E954592E1B23544900622560 /* WelcomeSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954592D1B23544900622560 /* WelcomeSignUpViewController.swift */; };
-		E95459301B23567800622560 /* WelcomeLoginTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E954592F1B23567800622560 /* WelcomeLoginTableViewCell.swift */; };
-		E95459321B23568A00622560 /* WelcomeSignUpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95459311B23568A00622560 /* WelcomeSignUpTableViewCell.swift */; };
 		E95459361B23593300622560 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E95459351B23593300622560 /* logo.png */; };
 		E954593A1B2361C200622560 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E95459391B2361C200622560 /* icon.png */; };
+		E992B5141B23AD5B00DC55B8 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E992B5131B23AD5B00DC55B8 /* TextFieldTableViewCell.swift */; };
+		E992B5161B23AE3500DC55B8 /* UserTaskNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E992B5151B23AE3500DC55B8 /* UserTaskNewViewController.swift */; };
+		E992B5191B23AEF400DC55B8 /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E992B5181B23AEF400DC55B8 /* LabelTableViewCell.swift */; };
+		E992B51B1B23AEFE00DC55B8 /* SliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E992B51A1B23AEFE00DC55B8 /* SliderTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +61,6 @@
 		69CE69B5AB0D7FC34B95FFE2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D4802D89038C17C42406F056 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E95458FF1B22E36E00622560 /* UserTaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTaskListViewController.swift; sourceTree = "<group>"; };
-		E95459031B22F8B600622560 /* UserTaskNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTaskNewViewController.swift; sourceTree = "<group>"; };
 		E95459051B22FC6A00622560 /* UserTaskListCustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTaskListCustomTableViewCell.swift; sourceTree = "<group>"; };
 		E954590F1B2301C100622560 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		E95459181B2302E800622560 /* PaddingUILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingUILabel.swift; sourceTree = "<group>"; };
@@ -68,10 +68,12 @@
 		E95459251B234EB400622560 /* WelcomeTopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeTopViewController.swift; sourceTree = "<group>"; };
 		E954592B1B23543C00622560 /* WelcomeLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeLoginViewController.swift; sourceTree = "<group>"; };
 		E954592D1B23544900622560 /* WelcomeSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeSignUpViewController.swift; sourceTree = "<group>"; };
-		E954592F1B23567800622560 /* WelcomeLoginTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeLoginTableViewCell.swift; sourceTree = "<group>"; };
-		E95459311B23568A00622560 /* WelcomeSignUpTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeSignUpTableViewCell.swift; sourceTree = "<group>"; };
 		E95459351B23593300622560 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = Image/logo.png; sourceTree = SOURCE_ROOT; };
 		E95459391B2361C200622560 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Image/icon.png; sourceTree = SOURCE_ROOT; };
+		E992B5131B23AD5B00DC55B8 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		E992B5151B23AE3500DC55B8 /* UserTaskNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTaskNewViewController.swift; sourceTree = "<group>"; };
+		E992B5181B23AEF400DC55B8 /* LabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
+		E992B51A1B23AEFE00DC55B8 /* SliderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,7 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				E95459071B22FC7000622560 /* UserTaskList */,
-				E95459031B22F8B600622560 /* UserTaskNewViewController.swift */,
+				E992B5171B23AEA600DC55B8 /* UserTaskNew */,
 			);
 			name = UserTask;
 			sourceTree = "<group>";
@@ -215,6 +217,7 @@
 			children = (
 				E95459181B2302E800622560 /* PaddingUILabel.swift */,
 				E95459211B23156B00622560 /* OutlineUILabel.swift */,
+				E992B5131B23AD5B00DC55B8 /* TextFieldTableViewCell.swift */,
 			);
 			name = Parts;
 			sourceTree = "<group>";
@@ -232,28 +235,20 @@
 			isa = PBXGroup;
 			children = (
 				E95459251B234EB400622560 /* WelcomeTopViewController.swift */,
-				E95459341B23569700622560 /* WelcomeSignUp */,
-				E95459331B23568F00622560 /* WelcomeLogin */,
+				E954592D1B23544900622560 /* WelcomeSignUpViewController.swift */,
+				E954592B1B23543C00622560 /* WelcomeLoginViewController.swift */,
 			);
 			name = Welcome;
 			sourceTree = "<group>";
 		};
-		E95459331B23568F00622560 /* WelcomeLogin */ = {
+		E992B5171B23AEA600DC55B8 /* UserTaskNew */ = {
 			isa = PBXGroup;
 			children = (
-				E954592B1B23543C00622560 /* WelcomeLoginViewController.swift */,
-				E954592F1B23567800622560 /* WelcomeLoginTableViewCell.swift */,
+				E992B5151B23AE3500DC55B8 /* UserTaskNewViewController.swift */,
+				E992B5181B23AEF400DC55B8 /* LabelTableViewCell.swift */,
+				E992B51A1B23AEFE00DC55B8 /* SliderTableViewCell.swift */,
 			);
-			name = WelcomeLogin;
-			sourceTree = "<group>";
-		};
-		E95459341B23569700622560 /* WelcomeSignUp */ = {
-			isa = PBXGroup;
-			children = (
-				E954592D1B23544900622560 /* WelcomeSignUpViewController.swift */,
-				E95459311B23568A00622560 /* WelcomeSignUpTableViewCell.swift */,
-			);
-			name = WelcomeSignUp;
+			name = UserTaskNew;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,19 +404,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E95459321B23568A00622560 /* WelcomeSignUpTableViewCell.swift in Sources */,
+				E992B5141B23AD5B00DC55B8 /* TextFieldTableViewCell.swift in Sources */,
 				4981F2161B22EA0C00C574D7 /* UserTaskModel.swift in Sources */,
 				E954592C1B23543C00622560 /* WelcomeLoginViewController.swift in Sources */,
-				E95459301B23567800622560 /* WelcomeLoginTableViewCell.swift in Sources */,
 				4905729F1B22DBDF0010B76A /* UserModel.swift in Sources */,
 				E95459001B22E36E00622560 /* UserTaskListViewController.swift in Sources */,
-				E95459041B22F8B600622560 /* UserTaskNewViewController.swift in Sources */,
 				E95459221B23156B00622560 /* OutlineUILabel.swift in Sources */,
+				E992B5191B23AEF400DC55B8 /* LabelTableViewCell.swift in Sources */,
 				E95459191B2302E800622560 /* PaddingUILabel.swift in Sources */,
 				E954592E1B23544900622560 /* WelcomeSignUpViewController.swift in Sources */,
 				E95459061B22FC6A00622560 /* UserTaskListCustomTableViewCell.swift in Sources */,
 				4905727E1B22CC040010B76A /* AppDelegate.swift in Sources */,
+				E992B51B1B23AEFE00DC55B8 /* SliderTableViewCell.swift in Sources */,
 				4981F2181B22F0B400C574D7 /* RewardModel.swift in Sources */,
+				E992B5161B23AE3500DC55B8 /* UserTaskNewViewController.swift in Sources */,
 				499E58E31B2316AF00EEBD45 /* Constant.swift in Sources */,
 				E95459101B2301C100622560 /* UIColorExtension.swift in Sources */,
 				E95459261B234EB400622560 /* WelcomeTopViewController.swift in Sources */,

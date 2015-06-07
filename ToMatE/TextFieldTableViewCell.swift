@@ -1,5 +1,5 @@
 //
-//  WelcomeLoginTableViewCell.swift
+//  TextFieldTableViewCell.swift
 //  ToMatE
 //
 //  Created by minami on 6/7/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WelcomeLoginTableViewCell: UITableViewCell {
+class TextFieldTableViewCell: UITableViewCell {
 
     @IBOutlet weak var textField: UITextField!
     override func awakeFromNib() {

@@ -2,86 +2,147 @@
 //  UserTaskNewViewController.swift
 //  ToMatE
 //
-//  Created by minami on 6/6/15.
+//  Created by minami on 6/7/15.
 //  Copyright (c) 2015 KazuyaMIURA. All rights reserved.
 //
 
 import UIKit
 
-class UserTaskNewViewController: UITableViewController,UITableViewDelegate,UITableViewDataSource {
+class UserTaskNewViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    var sliderValue:Float = 1
+    
+    var datePicker:UIDatePicker = UIDatePicker()
+    
+    let textFieldCellIdentifer = "userTaskNewTextFieldCell"
+    let labelCellIdentifer = "userTaskNewLabelCell"
+    let sliderCellIdentifer = "userTaskNewSliderCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "新規登録"
+        
+        datePicker.frame = CGRectMake(0, self.view.frame.size.height, datePicker.frame.size.width, datePicker.frame.size.height)
+        datePicker.timeZone = NSTimeZone.localTimeZone()
+        datePicker.backgroundColor = UIColor.whiteColor()
+        datePicker.addTarget(self, action: "didChangeDatePicker:", forControlEvents: UIControlEvents.ValueChanged)
+        datePicker.datePickerMode = UIDatePickerMode.Date
+        self.view.addSubview(datePicker)
+        
+
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
+    
+    override func viewDidAppear(animated: Bool) {
+        let textField = self.view.viewWithTag(1) as! UITextField
+        textField.delegate = self
+        
+        let tapGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "didTapLimitLabel:")
+        let limitLabel = self.view.viewWithTag(2) as! UILabel
+        NSLog("limitlabel:%@", limitLabel)
+        limitLabel.addGestureRecognizer(tapGesture)
+        
+        let slider = self.view.viewWithTag(3) as! UISlider
+        slider.addTarget(self, action: "sliderChanging:", forControlEvents: UIControlEvents.ValueChanged)
     }
+     
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 0
+    //MARK: - TableViewDataSource
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 3
     }
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
-
-        // Configure the cell...
-
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell:UITableViewCell = UITableViewCell()
+        switch indexPath.section {
+        case 0:
+            cell = tableView.dequeueReusableCellWithIdentifier(textFieldCellIdentifer, forIndexPath: indexPath) as! TextFieldTableViewCell
+        case 1:
+            cell = tableView.dequeueReusableCellWithIdentifier(labelCellIdentifer, forIndexPath: indexPath) as! LabelTableViewCell
+        case 2:
+            cell = tableView.dequeueReusableCellWithIdentifier(sliderCellIdentifer, forIndexPath: indexPath) as! SliderTableViewCell
+        default:
+            break
+        }
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return ""
+        case 1:
+            return "期日"
+        case 2:
+            return "重要度"
+        default:
+            return ""
+        }
+    }
+    
+    
+    //MARK: -DatePicker
+    func didChangeDatePicker(sender : UIDatePicker) {
+        let dateFormatter: NSDateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy年MM月dd日"
+        
+        let titleLabel = self.view.viewWithTag(2) as? UILabel
+        titleLabel?.text = dateFormatter.stringFromDate(sender.date)
+    }
+    
+    func openDatePicker() {
+        UIView.animateWithDuration(0.5, animations: {
+            self.datePicker.frame = CGRectMake(0, self.view.frame.size.height - self.datePicker.frame.size.height-60, self.datePicker.frame.size.width, self.datePicker.frame.size.height)
+        })
+    }
+    func closeDatePicker() {
+        UIView.animateWithDuration(0.5, animations: {
+            self.datePicker.frame = CGRectMake(0, self.view.frame.size.height, self.datePicker.frame.size.width, self.datePicker.frame.size.height)
+        })
+        
+    }
+    
+    
+    //MARK: - TextFieldDelegate
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
         return true
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
+    
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        closeDatePicker()
         return true
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+    
+    //MARK: -Slider
+    func sliderChanging(sender : UISlider) {
+        sender.value = round(sender.value)
+        sliderValue = sender.value
     }
-    */
 
+  
+    func didTapLimitLabel(sender: AnyObject) {
+        openDatePicker()
+        self.view.endEditing(true)
+    }
+    
+    //MARK: - Other
+    @IBAction func didTapAddButton(sender: AnyObject) {
+        let title = (self.view.viewWithTag(1) as? UITextField)?.text
+        let limit = (self.view.viewWithTag(2) as? UILabel)?.text
+        let importance = sliderValue
+        NSLog("title:%@,limit:%@,import:%f", title!,limit!,importance)
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    @IBAction func didTapScreen(sender: AnyObject) {
+        self.view.endEditing(true)
+        closeDatePicker()
+    }
+    
+    
 }

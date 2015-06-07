@@ -27,7 +27,7 @@ class WelcomeLoginViewController: UIViewController,UITableViewDelegate,UITableVi
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifer, forIndexPath: indexPath) as! WelcomeLoginTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifer, forIndexPath: indexPath) as! TextFieldTableViewCell
         cell.textField.tag = indexPath.section + 1
         switch indexPath.section {
         case 0:
