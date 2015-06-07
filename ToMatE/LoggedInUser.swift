@@ -81,6 +81,9 @@ class LoggedInUser {
         var result = false
         Alamofire.request(.GET, Constant.API_ROOT + "users/sign_in", parameters: User.getAuthenticationParams(email ?? "", password: password ?? ""), encoding: .JSON)
         .responseObject { (response: SHOWUserResponse?, error: NSError?) in
+            if error != nil {
+                return
+            }
             if let userResponse = response {
                 self.name = userResponse.user?.name
                 self.email = userResponse.user?.email

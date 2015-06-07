@@ -26,9 +26,12 @@ class UserTaskListViewController: UITableViewController,UITableViewDelegate,UITa
     func fetchRemoteData() {
         Alamofire.request(.GET, Constant.API_PREFIX + Constant.API_PREFIX + "users/\(LoggedInUser.currentUser.getId())/user_tasks", parameters: nil)
             .responseObject{ (response: GETUserTasksResponse?, error: NSError?) in
-            if let userTasks = response?.userTasks {
-                self.dividedData = self.sortOutDoneFromUncompleted(userTasks)
-                self.tableView.reloadData()
+                if error != nil {
+                    return
+                }
+                if let userTasks = response?.userTasks {
+                    self.dividedData = self.sortOutDoneFromUncompleted(userTasks)
+                    self.tableView.reloadData()
             }
         }
     }

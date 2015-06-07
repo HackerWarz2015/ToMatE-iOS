@@ -41,9 +41,8 @@ class SHOWUserResponse: Mappable {
 }
 
 class POSTUserAuthenticationResponse {
+
 }
-
-
 
 class User: Mappable {
 

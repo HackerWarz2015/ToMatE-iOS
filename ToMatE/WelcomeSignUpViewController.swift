@@ -108,6 +108,9 @@ class WelcomeSignUpViewController: UIViewController,UITableViewDataSource,UITabl
 
         Alamofire.request(.GET, Constant.API_ROOT + "users/", parameters: User.getCreateUserParams(name!, email: address!, password: pass0!, passwordConf: pass1!), encoding: .JSON)
             .responseObject { (response: SHOWUserResponse?, error: NSError?) in
+                if error != nil {
+                    return
+                }
                 if let userResponse = response {
                     LoggedInUser.currentUser.setName((userResponse.user?.name)!)
                     LoggedInUser.currentUser.setPassword((userResponse.user?.password)!)
