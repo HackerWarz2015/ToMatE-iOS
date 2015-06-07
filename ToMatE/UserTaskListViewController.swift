@@ -20,15 +20,19 @@ class UserTaskListViewController: UITableViewController,UITableViewDelegate,UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "目標"
+    }
+
+    override func viewWillAppear(animated: Bool) {
         fetchRemoteData()
     }
 
     func fetchRemoteData() {
-        Alamofire.request(.GET, Constant.API_PREFIX + Constant.API_PREFIX + "users/\(LoggedInUser.currentUser.getId())/user_tasks", parameters: nil)
+        Alamofire.request(.GET, String(Constant.API_ROOT + Constant.API_PREFIX + "users/\(LoggedInUser.currentUser.getId()!)/user_tasks"), parameters: ["token": LoggedInUser.currentUser.getToken()!])
             .responseObject{ (response: GETUserTasksResponse?, error: NSError?) in
                 if error != nil {
                     return
                 }
+
                 if let userTasks = response?.userTasks {
                     self.dividedData = self.sortOutDoneFromUncompleted(userTasks)
                     self.tableView.reloadData()
@@ -38,6 +42,7 @@ class UserTaskListViewController: UITableViewController,UITableViewDelegate,UITa
 
     func sortOutDoneFromUncompleted(userTasks: [UserTask]) -> ([UserTask], [UserTask]) {
         var tupple: ([UserTask], [UserTask]) = ([], [])
+        println(userTasks)
         for task in userTasks {
             if task.doneAt != nil {
                 tupple.1.append(task)
@@ -77,9 +82,14 @@ class UserTaskListViewController: UITableViewController,UITableViewDelegate,UITa
             case 0:
                 cell.stepLabel.text = String(dividedData.0[indexPath.row].steps!)
                 cell.titleLabel.text = dividedData.0[indexPath.row].title
-                cell.limitDayLabel.text = dateFormatter.stringFromDate(dividedData.0[indexPath.row].limitDate!)
-                let dateComp = cal.components(NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay, fromDate: dividedData.0[indexPath.row].limitDate!, toDate: today, options: NSCalendarOptions.MatchFirst)
-                cell.limitCountLabel.text = String(dateComp.month) + String(dateComp.day)
+                if let limit = dividedData.0[indexPath.row].limitDate {
+                    cell.limitDayLabel.text = dateFormatter.stringFromDate(dividedData.0[indexPath.row].limitDate!)
+                    let dateComp = cal.components(NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay, fromDate: dividedData.0[indexPath.row].limitDate!, toDate: today, options: NSCalendarOptions.MatchFirst)
+                    cell.limitCountLabel.text = String(dateComp.month) + String(dateComp.day)
+                } else {
+                    cell.limitDayLabel.text = "無期限"
+                    cell.limitCountLabel.text = ""
+                }
 
             case 1:
                 cell.stepLabel.text = String(dividedData.1[indexPath.row].steps!)
