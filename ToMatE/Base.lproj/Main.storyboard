@@ -724,16 +724,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qP4-uh-14o" userLabel="limitView">
-                                            <rect key="frame" x="220" y="8" width="90" height="30"/>
+                                            <rect key="frame" x="210" y="8" width="100" height="30"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="あと123日" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gg8-4Y-nol" userLabel="limitCountLabel" customClass="PaddingUILabel" customModule="ToMatE" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="15"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015.12.28" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cqy-Sy-ahn" userLabel="limitDayLabel" customClass="PaddingUILabel" customModule="ToMatE" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="15" width="90" height="15"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015年12月28日" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cqy-Sy-ahn" userLabel="limitDayLabel" customClass="PaddingUILabel" customModule="ToMatE" customModuleProvider="target">
+                                                    <rect key="frame" x="4" y="15" width="92" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -743,10 +743,9 @@
                                             <constraints>
                                                 <constraint firstItem="Cqy-Sy-ahn" firstAttribute="top" secondItem="gg8-4Y-nol" secondAttribute="bottom" id="6vu-a2-h2K"/>
                                                 <constraint firstItem="gg8-4Y-nol" firstAttribute="top" secondItem="qP4-uh-14o" secondAttribute="top" id="CFQ-xC-ZQW"/>
-                                                <constraint firstItem="gg8-4Y-nol" firstAttribute="leading" secondItem="Cqy-Sy-ahn" secondAttribute="leading" id="PaP-r8-9uJ"/>
+                                                <constraint firstAttribute="centerX" secondItem="Cqy-Sy-ahn" secondAttribute="centerX" id="NGi-BW-eIt"/>
                                                 <constraint firstAttribute="trailing" secondItem="gg8-4Y-nol" secondAttribute="trailing" id="UJT-gC-ZBK"/>
-                                                <constraint firstAttribute="width" constant="90" id="pCT-Gf-DGN"/>
-                                                <constraint firstItem="gg8-4Y-nol" firstAttribute="width" secondItem="Cqy-Sy-ahn" secondAttribute="width" id="vz4-bV-lep"/>
+                                                <constraint firstAttribute="width" constant="100" id="pCT-Gf-DGN"/>
                                                 <constraint firstItem="gg8-4Y-nol" firstAttribute="leading" secondItem="qP4-uh-14o" secondAttribute="leading" id="xG6-qq-nw7"/>
                                                 <constraint firstAttribute="bottom" secondItem="Cqy-Sy-ahn" secondAttribute="bottom" id="y3U-cC-Zw6"/>
                                             </constraints>

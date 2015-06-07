@@ -131,7 +131,9 @@ class UserTaskListViewController: UITableViewController,UITableViewDelegate,UITa
     
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
         let doneAction = UITableViewRowAction(style: .Normal, title: "done"){ (action, indexPath) in
-            self.doneUserTask(indexPath)
+            if indexPath.section == 0 {
+                self.doneUserTask(indexPath)
+            }
         }
         doneAction.backgroundColor = UIColor.TMEGreenColor()
         return [doneAction]
