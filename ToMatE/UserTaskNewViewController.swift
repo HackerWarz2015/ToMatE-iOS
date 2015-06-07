@@ -140,7 +140,7 @@ class UserTaskNewViewController: UIViewController,UITableViewDelegate,UITableVie
 
 
 
-        Alamofire.request(.POST, String(Constant.API_ROOT + Constant.API_PREFIX + "users/\(LoggedInUser.currentUser.getId()!)/user_tasks?token=" + LoggedInUser.currentUser.getToken()!), parameters: UserTask.getCreateUserTaskParams(title!, difficulty: Int(importance), steps: Int(importance*2+1), limit: limit!))
+        Alamofire.request(.POST, String(Constant.API_ROOT + Constant.API_PREFIX + "users/\(LoggedInUser.currentUser.getId()!)/user_tasks?token=" + LoggedInUser.currentUser.getToken()!), parameters: UserTask.getCreateUserTaskParams(title!, difficulty: Int(importance*2+1), steps: Int(importance*2+1), limit: limit!))
             .responseObject{ (response: POSTUserTaskResponse?, error: NSError?) in
                 println(response?.userTask)
                 println(error)

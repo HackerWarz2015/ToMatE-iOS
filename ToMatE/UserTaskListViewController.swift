@@ -12,6 +12,7 @@ import AlamofireObjectMapper
 
 class UserTaskListViewController: UITableViewController,UITableViewDelegate,UITableViewDataSource {
 
+    
     let cellIdentifer = "userTaskListCell"
     var isOpenSections:[Int:Bool] = [Int():true]
 
@@ -90,11 +91,22 @@ class UserTaskListViewController: UITableViewController,UITableViewDelegate,UITa
                     cell.limitDayLabel.text = "無期限"
                     cell.limitCountLabel.text = ""
                 }
+                switch  dividedData.0[indexPath.row].difficulty! {
+                    case 0:
+                        cell.iconView.backgroundColor = UIColor.TMEBlueColor()
+                    case 1:
+                        cell.iconView.backgroundColor = UIColor.TMEGreenColor()
+                    case 2:
+                        cell.iconView.backgroundColor = UIColor.TMERedColor()
+                    default:
+                        break
+            }
+            
 
             case 1:
                 cell.stepLabel.text = String(dividedData.1[indexPath.row].steps!)
                 cell.titleLabel.text = dividedData.1[indexPath.row].title
-                cell.limitDayLabel.text = dateFormatter.stringFromDate(dividedData.1[indexPath.row].limitDate!)
+                cell.limitView.hidden = true
             default: break
         }
 
@@ -116,5 +128,25 @@ class UserTaskListViewController: UITableViewController,UITableViewDelegate,UITa
         }
         return label
     }
-
+    
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+        let doneAction = UITableViewRowAction(style: .Normal, title: "done"){ (action, indexPath) in
+            self.doneUserTask(indexPath)
+        }
+        doneAction.backgroundColor = UIColor.TMEGreenColor()
+        return [doneAction]
+    }
+    
+    func doneUserTask(indexPath : NSIndexPath) {
+        let task = dividedData.0[indexPath.row]
+        dividedData.0.removeAtIndex(indexPath.row)
+        dividedData.1.append(task)
+        println(dividedData.0)
+        println(dividedData.1)
+        self.tableView.reloadData()
+    }
+    
+    override func tableView(tableView: UITableView,commitEditingStyle editingStyle: UITableViewCellEditingStyle,forRowAtIndexPath indexPath: NSIndexPath) {
+            
+    }
 }

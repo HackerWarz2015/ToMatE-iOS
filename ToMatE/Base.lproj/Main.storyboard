@@ -88,7 +88,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.84953703700000005" green="0.38764467590000001" blue="0.26484374999999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.51372549019607838" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="sLG-ez-zA9" firstAttribute="top" secondItem="F1C-Ng-IZ7" secondAttribute="bottom" constant="20" id="3QC-cM-zFz"/>
                             <constraint firstAttribute="centerX" secondItem="Fzc-gf-CjM" secondAttribute="centerX" id="767-dx-OpF"/>
@@ -713,12 +713,12 @@
         <scene sceneID="E5o-XE-bsM">
             <objects>
                 <tableViewController id="aL8-MI-UNK" customClass="UserTaskListViewController" customModule="ToMatE" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="47" sectionHeaderHeight="25" sectionFooterHeight="25" id="3yW-a4-rDY">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3yW-a4-rDY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="userTaskListCell" rowHeight="47" id="cSW-d5-QOE" customClass="UserTaskListCustomTableViewCell" customModule="ToMatE" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="userTaskListCell" rowHeight="47" id="cSW-d5-QOE" customClass="UserTaskListCustomTableViewCell" customModule="ToMatE" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cSW-d5-QOE" id="YYw-Rb-EJA">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -788,6 +788,7 @@
                                         <constraint firstItem="par-9T-yYe" firstAttribute="centerX" secondItem="kGx-JC-lVU" secondAttribute="centerX" id="yp9-rt-ufz"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <gestureRecognizers/>
                                 <connections>
                                     <outlet property="iconView" destination="par-9T-yYe" id="vg2-CX-jxV"/>
                                     <outlet property="limitCountLabel" destination="gg8-4Y-nol" id="bSe-Tl-51k"/>

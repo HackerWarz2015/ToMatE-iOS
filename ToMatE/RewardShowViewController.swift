@@ -89,6 +89,7 @@ class RewardShowViewController: UIViewController,UICollectionViewDataSource,UICo
         default:
             break
         }
+        cell.stepLabel.text = String(cell.step)
         
         if indexPath.item == 0 {
             cell.detailLabel.text = "start"

@@ -30,6 +30,4 @@ class UserTaskListCustomTableViewCell: UITableViewCell {
         selectedBackground.backgroundColor = UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1.0)
         self.selectedBackgroundView = selectedBackground
     }
-    
-    
 }
