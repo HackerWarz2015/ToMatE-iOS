@@ -88,7 +88,7 @@ class UserTaskListViewController: UITableViewController,UITableViewDelegate,UITa
                     let dateComp = cal.components(NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay, fromDate: dividedData.0[indexPath.row].limitDate!, toDate: today, options: NSCalendarOptions.MatchFirst)
                     cell.limitCountLabel.text = String(dateComp.month) + String(dateComp.day)
                 } else {
-                    cell.limitDayLabel.text = "無期限"
+                    cell.limitDayLabel.text = "2015年06月07日"
                     cell.limitCountLabel.text = ""
                 }
                 switch  dividedData.0[indexPath.row].difficulty! {
