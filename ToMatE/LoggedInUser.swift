@@ -89,6 +89,7 @@ class LoggedInUser {
                 self.name = user.name
                 self.email = user.email
                 self.token = user.token
+                self.id = user.id
                 let ud = NSUserDefaults.standardUserDefaults()
                 ud.setObject(self.name, forKey: "name")
                 ud.setObject(self.email, forKey: "email")
@@ -108,7 +109,6 @@ class LoggedInUser {
 
     func login() {
         repossessionAuthenticationToken()
-
     }
 
 

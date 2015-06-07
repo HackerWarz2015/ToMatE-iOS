@@ -40,6 +40,20 @@ class PUTUserTasksResponse: Mappable {
 
 }
 
+class POSTUserTaskResponse: Mappable {
+    var userTask: UserTask?
+    var errors: [String: String]?
+    init() {}
+
+    required init?(_ map: Map) {
+        mapping(map)
+    }
+
+    func mapping(map: Map) {
+        userTask <- map["user_task"]
+        errors <- map["errors"]
+    }
+}
 
 class UserTask: Mappable {
 
@@ -61,7 +75,7 @@ class UserTask: Mappable {
     func mapping(map: Map) {
         id <- map["id"]
         title <- map["title"]
-        limitDate <- map["limit_date"]
+        limitDate <- map["limit_at"]
         difficulty <- map["difficulty"]
         steps <- map["steps"]
         failureAt <- map["failure_at"]
@@ -69,8 +83,8 @@ class UserTask: Mappable {
         doneAt <- map["done_at"]
     }
 
-    class func getCreateUserTaskParams(title: String, difficulty: Int, steps: Int) -> [String: AnyObject] {
-        return ["title": title, "difficulty": difficulty, "steps": steps]
+    class func getCreateUserTaskParams(title: String, difficulty: Int, steps: Int, limit: String) -> [String: AnyObject] {
+        return ["user_task": ["title": title, "difficulty": difficulty, "steps": steps, "limit": limit]]
     }
 
     class func getUpdateUserTaskParams(status: String, title: String, difficulty: Int, steps: Int) -> [String: AnyObject] {
