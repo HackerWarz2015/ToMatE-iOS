@@ -10,12 +10,8 @@ import UIKit
 
 class RewardNewViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
+    var step = 0
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 2
     }
@@ -25,19 +21,22 @@ class RewardNewViewController: UIViewController,UITableViewDelegate,UITableViewD
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("rewardNewCell", forIndexPath: indexPath) as! RewardNewTableViewCell
-        cell.textField.tag = indexPath.section + 1
+        
         switch indexPath.section {
         case 0:
+            let cell = tableView.dequeueReusableCellWithIdentifier("rewardNewCell", forIndexPath: indexPath) as! RewardNewTableViewCell
+            cell.textField.tag = indexPath.section + 1
             cell.textField.keyboardType = UIKeyboardType.Default
-            cell.textField.placeholder = "ごほうびを入力してください"
+            return cell
         case 1:
+            let cell = tableView.dequeueReusableCellWithIdentifier("rewardNewStepCell", forIndexPath: indexPath) as! RewardNewStepTableViewCell
+            cell.textField.tag = indexPath.section + 1
             cell.textField.keyboardType = UIKeyboardType.NumberPad
+            cell.textField.text = (step == 0) ? "" : String(step)
+            return cell
         default:
-            break
+            return UITableViewCell()
         }
-        
-        return cell
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -45,7 +44,7 @@ class RewardNewViewController: UIViewController,UITableViewDelegate,UITableViewD
         case 0:
             return ""
         case 1:
-            return "設定歩数"
+            return ""
         default:
             return ""
         }
@@ -61,7 +60,7 @@ class RewardNewViewController: UIViewController,UITableViewDelegate,UITableViewD
         self.navigationController?.popViewControllerAnimated(true)
         let title = (self.view.viewWithTag(1) as? UITextField)?.text
         let step = (self.view.viewWithTag(2) as? UITextField)?.text
-        NSLog("address:%@,pass:%@", title!,step!)
+        NSLog("title:%@,step:%@", title!,step!)
         
         
     }

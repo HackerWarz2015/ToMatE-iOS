@@ -18,13 +18,13 @@ extension UIColor {
         return UIColor.rgb(r: 237, g: 161, b: 132, alpha: 1.0)
     }
     class func TMEBlueColor() -> UIColor {
-        return UIColor.rgb(r: 45, g: 154, b: 208, alpha: 0.8)
+        return UIColor.rgb(r: 65, g: 174, b: 228, alpha: 1.0)
     }
     class func TMEGreenColor() -> UIColor {
-        return UIColor.rgb(r: 40, g: 177, b: 115, alpha: 0.8)
+        return UIColor.rgb(r: 60, g: 197, b: 135, alpha: 1.0)
     }
     class func TMERedColor() -> UIColor {
-        return UIColor.rgb(r: 221, g: 79, b: 98, alpha: 0.8)
+        return UIColor.rgb(r: 241, g: 99, b: 128, alpha: 1.0)
     }
     
 }

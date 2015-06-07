@@ -19,4 +19,5 @@ class RewardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var stepLabel: UILabel!
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var stepImage: UIImageView!
+    var step = 0
 }
